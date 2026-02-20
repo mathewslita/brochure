@@ -44,4 +44,20 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         initFlipbook();
     }
+
+    // --- PROTECCIÓN ANTI-GIRO (Refresh Suave) ---
+    // Si el usuario voltea el celular y el canvas 3D "fixed" se rompe, recarga
+    // suavemente para re-dibujar las nuevas proporciones en un abrir y cerrar de ojos.
+    let resizeTimer;
+    let oldWidth = window.innerWidth;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            let newWidth = window.innerWidth;
+            // Si el salto de resolucion es grande (volteó la pantalla o achicó la ventana de PC)
+            if (Math.abs(oldWidth - newWidth) > 50) {
+                location.reload();
+            }
+        }, 300);
+    });
 });
