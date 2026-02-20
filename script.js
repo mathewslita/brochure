@@ -83,6 +83,15 @@ const closeBtn = document.getElementById('modal-close');
 const prevBtn = document.getElementById('modal-prev');
 const nextBtn = document.getElementById('modal-next');
 
+// Define openGallery to extract dynamic Vite hashed URLs from sibling thumbnails
+window.openGallery = function (imgElement) {
+    const galleryContainer = imgElement.closest('.gallery-images');
+    const allImages = Array.from(galleryContainer.querySelectorAll('img.gallery-thumb'));
+    const imageArray = allImages.map(img => img.src);
+    const index = allImages.indexOf(imgElement);
+    window.openModal(imageArray, index);
+};
+
 // Define openModal variable globally so onclick can reach it
 window.openModal = function (imageArray, index) {
     currentImages = imageArray;
