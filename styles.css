@@ -1,0 +1,221 @@
+/* =========================================
+   1. VARIABLES Y RESETEO BÁSICO
+   ========================================= */
+:root {
+    /* Definimos los colores aquí para usarlos en las páginas específicas */
+    --primary-color: #004b87;
+    /* Azul oscuro corporativo */
+    --secondary-color: #F9A826;
+    /* Naranja/Amarillo de acento */
+    --text-dark: #1e293b;
+    /* Texto principal */
+    --text-light: #64748b;
+    /* Texto secundario */
+    --bg-gradient-start: #64748b;
+    --bg-gradient-end: #1e293b;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    /* Asegura altura completa */
+    overflow: hidden;
+    /* Evita scrollbars en la ventana principal */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-gradient-end);
+    font-family: 'Montserrat', sans-serif;
+    background-image: radial-gradient(circle at center, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+}
+
+/* =========================================
+   2. CONTENEDOR PRINCIPAL (El escenario)
+   ========================================= */
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    /* Evita que el libro colosal cree barras de scroll */
+    overflow: hidden;
+}
+
+/* =========================================
+   3. EL LIBRO (El componente Flipbook)
+   ========================================= */
+.flip-book {
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    background-color: #fff;
+    /* Convertimos al libro en un lienzo responsivo mediante CSS puro */
+    max-width: 95vw;
+    max-height: 95vh;
+}
+
+/* =========================================
+   4. ESTILOS BASE DE LAS PÁGINAS
+   ========================================= */
+.page {
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+    /* CRUCIAL: Evita que nada se salga de la hoja durante la animación */
+    /* Sombra interior sutil para dar volumen a la hoja */
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Wrapper interno opcional si tus páginas tienen texto + foto */
+.page-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================================
+   5. SEGURIDAD DE IMÁGENES (Lo más importante)
+   ========================================= */
+/* Esta regla asegura que NINGUNA imagen dentro de una página 
+   se corte o se deforme, sin importar el tamaño de la pantalla.
+*/
+.page img {
+    width: 100%;
+    height: 100%;
+    /* 'contain' asegura que la imagen entera sea visible siempre */
+    object-fit: contain;
+    display: block;
+    /* Evita que el usuario intente arrastrar la imagen en vez de pasar la hoja */
+    pointer-events: none;
+    user-select: none;
+}
+
+
+/* =========================================
+   6. ESTILOS ESPECÍFICOS DE CONTENIDO INTERNO
+   (Página de Cierre y Contraportada)
+   ========================================= */
+
+/* --- Estilos para la Página 8 (Cierre con texto) --- */
+.closing-page {
+    /* Hereda flex del .page-content si se usa, sino se aplica directo */
+    display: flex;
+    flex-direction: column;
+    background-color: #f8fafc;
+}
+
+/* Refactorizado: Ya no necesita !important porque la regla global `.page img` lo cubre */
+.closing-page .closing-img {
+    height: 40%;
+    /* Ajustable según la imagen */
+    border-bottom: 3px solid var(--secondary-color);
+    background-color: white;
+    /* Fondo blanco por si la imagen tiene transparencias */
+}
+
+.closing-page .text-content {
+    flex-grow: 1;
+    /* Ocupa el espacio restante */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centra el texto verticalmente en su espacio */
+    text-align: center;
+    padding: 1rem 1.5rem;
+}
+
+.closing-page h2 {
+    color: var(--primary-color);
+    margin: 0 0 0.5rem 0;
+    font-size: 1.3rem;
+}
+
+.closing-page h3 {
+    color: var(--secondary-color);
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.closing-page p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-dark);
+}
+
+.closing-page .closing-quote {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.closing-page .closing-quote h4 {
+    color: var(--primary-color);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.closing-page .closing-quote span {
+    color: var(--secondary-color);
+}
+
+.closing-page .closing-footer {
+    margin-top: auto;
+    /* Empuja al fondo */
+    font-size: 0.75rem;
+    color: var(--text-light);
+    padding: 10px 0;
+}
+
+
+/* --- Estilos para la Contraportada Final (Back Cover) --- */
+.back-cover {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #001a38 100%);
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+}
+
+.back-cover h1 {
+    color: var(--secondary-color);
+    font-size: 2.5rem;
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+}
+
+.back-cover h2 {
+    color: #cbd5e1;
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin: 0 0 3rem 0;
+    letter-spacing: 1px;
+}
+
+.back-cover .final-message {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.back-cover .footer-links {
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 1.5rem;
+    width: 70%;
+    color: #94a3b8;
+    font-size: 0.8rem;
+}
