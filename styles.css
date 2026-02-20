@@ -24,6 +24,8 @@ body {
     /* Asegura altura completa */
     overflow: hidden;
     /* Evita scrollbars en la ventana principal */
+    overscroll-behavior-y: none;
+    /* Bloquea el gesto de "jalar para refrescar" en celulares */
 }
 
 body {
@@ -58,6 +60,8 @@ body {
     /* Convertimos al libro en un lienzo responsivo mediante CSS puro */
     max-width: 95vw;
     max-height: 95vh;
+    touch-action: pan-y;
+    /* Desactiva gestos nativos laterales del navegador para cederlos a la librería JS */
 }
 
 /* =========================================
