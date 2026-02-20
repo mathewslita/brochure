@@ -3,85 +3,393 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- Meta estricto para móviles: Bloquea el zoom in/out destructivo al intentar voltear la página con los dedos -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Brochure - Circuit Store</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - Circuit Store</title>
+    <!-- Modern Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="flip-book" id="flip-book">
-
-            <div class="page" data-density="hard">
-                <div class="page-content">
-                    <img src="public/page-1.jpg" alt="Portada Circuit Store">
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="dist/logocircuit.png" alt="Circuit Store Logo"
+                    style="height: 60px; width: auto; max-width: 150px; object-fit: contain;">
+                <div class="logo-text"
+                    style="display: flex; flex-direction: column; line-height: 1.1; margin-left: 0.5rem;">
+                    <span class="logo-circuit" style="font-size: 1.4rem;">CIRCUIT</span>
+                    <span class="logo-store" style="font-size: 1.4rem;">STORE</span>
                 </div>
             </div>
-
-            <div class="page">
-                <div class="page-content">
-                    <img src="public/page-2.jpg" alt="Página 2">
-                </div>
+            <div class="nav-links">
+                <a href="#servicios" class="nav-link">Servicios</a>
+                <a href="#nosotros" class="nav-link">Nosotros</a>
+                <a href="#clientes" class="nav-link">Clientes</a>
+                <a href="https://wa.me/593988012730" target="_blank" class="btn-primary pulse">Contacto <i
+                        class="fa-brands fa-whatsapp"></i></a>
             </div>
+            <button class="menu-toggle" id="mobile-menuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
 
-            <div class="page">
-                <div class="page-content">
-                    <img src="public/page-3.jpg" alt="Página 3">
-                </div>
-            </div>
-
-            <div class="page">
-                <div class="page-content">
-                    <img src="public/page-4.jpg" alt="Página 4">
-                </div>
-            </div>
-
-            <div class="page">
-                <div class="page-content">
-                    <img src="public/page-5.jpg" alt="Página 5">
-                </div>
-            </div>
-
-            <div class="page">
-                <div class="page-content">
-                    <img src="public/page-6.jpg" alt="Página 6">
-                </div>
-            </div>
-
-            <div class="page">
-                <div class="page-content">
-                    <img src="public/page-7.jpg" alt="Página 7">
-                </div>
-            </div>
-
-            <div class="page" data-density="hard">
-                <div class="page-content closing-page">
-                    <img src="public/page-8.png" alt="Cierre de Proyecto" class="closing-img">
-                    <div class="text-content">
-                        <h2>SU ALIADO ESTRATÉGICO</h2>
-                        <h3>PARA EL FUTURO INDUSTRIAL</h3>
-
-                        <p>En <strong>CIRCUIT STORE</strong>, no solo ejecutamos trabajos; entregamos tranquilidad
-                            operativa.</p>
-                        <p>Nuestra combinación de experiencia en campo, suministro de materiales de calidad y compromiso
-                            inquebrantable con la seguridad nos convierte en la opción confiable para sus desafíos más
-                            críticos.</p>
-
-
-                        <div class="closing-footer">
-                            © 2026 CIRCUIT STORE - Todos los derechos reservados.
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="close-menu" id="close-menuBtn"><i class="fa-solid fa-xmark"></i></button>
+        <div class="mobile-nav-links">
+            <a href="#servicios" class="mobile-link">Servicios</a>
+            <a href="#nosotros" class="mobile-link">Nosotros</a>
+            <a href="#clientes" class="mobile-link">Clientes</a>
+            <a href="https://wa.me/593988012730" target="_blank" class="btn-primary pulse mobile-btn">Contacto <i
+                    class="fa-brands fa-whatsapp"></i></a>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.js"></script>
-    <script type="module" src="script.js"></script>
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-background" style="background-image: url('dist/areaelectrica1.png');"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content reveal">
+            <p class="hero-subtitle">Venta & Servicios Eléctricos</p>
+            <h1 class="hero-title">Soluciones Seguras y <span class="highlight">Confiables</span></h1>
+            <p class="hero-description">Especialistas en la ejecución de trabajos eléctricos e instrumentación de alta
+                calidad y eficiencia para cada proyecto.</p>
+            <div class="hero-actions">
+                <a href="#servicios" class="btn-secondary">Explorar Servicios <i class="fa-solid fa-arrow-down"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats/Trust Banner -->
+    <section class="trust-banner">
+        <div class="trust-container reveal">
+            <div class="trust-item">
+                <i class="fa-solid fa-briefcase"></i>
+                <div class="trust-text">
+                    <h4>+30</h4>
+                    <p>Proyectos Realizados</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <i class="fa-solid fa-calendar-check"></i>
+                <div class="trust-text">
+                    <h4>+3 Años</h4>
+                    <p>De Experiencia</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div class="trust-text">
+                    <h4>Garantía</h4>
+                    <p>Calidad y Seguridad</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Catalog Section -->
+    <section class="catalog-section" id="servicios">
+        <div class="section-header reveal">
+            <h2>Nuestros <span class="highlight">Servicios</span></h2>
+            <p>Conozca nuestras especialidades en construcción y mantenimiento industrial a nivel eléctrico,
+                instrumentación y control.</p>
+        </div>
+
+        <div class="catalog-grid">
+            <!-- Service Card 1: Área Eléctrica -->
+            <div class="card reveal-up" style="transition-delay: 0.1s;">
+                <div class="card-header bg-electric">
+                    <i class="fa-solid fa-bolt hover-trigger"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Área Eléctrica</h3>
+
+                    <!-- Minigalería de imágenes -->
+                    <div class="gallery-images">
+                        <img src="dist/areaelectrica1.png" alt="Área Eléctrica 1" class="gallery-thumb"
+                            onclick="openModal(['dist/areaelectrica1.png', 'dist/areaelectrica2.png', 'dist/areaelectrica3.png', 'dist/areaelectrica4.png'], 0)">
+                        <img src="dist/areaelectrica2.png" alt="Área Eléctrica 2" class="gallery-thumb"
+                            onclick="openModal(['dist/areaelectrica1.png', 'dist/areaelectrica2.png', 'dist/areaelectrica3.png', 'dist/areaelectrica4.png'], 1)">
+                        <img src="dist/areaelectrica3.png" alt="Área Eléctrica 3" class="gallery-thumb"
+                            onclick="openModal(['dist/areaelectrica1.png', 'dist/areaelectrica2.png', 'dist/areaelectrica3.png', 'dist/areaelectrica4.png'], 2)">
+                        <img src="dist/areaelectrica4.png" alt="Área Eléctrica 4" class="gallery-thumb"
+                            onclick="openModal(['dist/areaelectrica1.png', 'dist/areaelectrica2.png', 'dist/areaelectrica3.png', 'dist/areaelectrica4.png'], 3)">
+                    </div>
+
+                    <ul class="service-list">
+                        <li>Elaboramos empalmes de media y alta tension en frio, caliente y con micil de 15KV hasta 69
+                            KV.</li>
+                        <li>Puntas terminales en frio, caliente y PFISTERER de 15 kv - 69 kv.</li>
+                        <li>Instalacion de equipos eléctricos, tableros, motores, bombas y equipos de superficie.</li>
+                        <li>Tendido, ingreso y conexionado de cables de fuerza y control.</li>
+                        <li>Sistema de iluminacion interior y perimetral.</li>
+                        <li>Tendido y figurado de bandejas portacables y tuberia conduit.</li>
+                        <li>Sistema de proteccion atmosférica, sistema puesta tierra.</li>
+                        <li>Sircuito cerrado de CCTV.</li>
+                    </ul>
+                    <a href="https://wa.me/593987024974?text=Hola,%20busco%20información%20sobre%20el%20Área%20Eléctrica"
+                        class="btn-primary small mt-auto" target="_blank">Cotizar Área Eléctrica</a>
+                </div>
+            </div>
+
+            <!-- Service Card 2: Instrumentación -->
+            <div class="card reveal-up" style="transition-delay: 0.2s;">
+                <div class="card-header bg-instrumentation">
+                    <i class="fa-solid fa-screwdriver-wrench hover-trigger"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Área de Instrumentación</h3>
+
+                    <!-- Minigalería de imágenes -->
+                    <div class="gallery-images">
+                        <img src="dist/areadeinstrumentacion.png" alt="Instrumentación" class="gallery-thumb"
+                            onclick="openModal(['dist/areadeinstrumentacion.png'], 0)">
+                    </div>
+
+                    <ul class="service-list">
+                        <li>Montaje de sistema de inyección de químicos.</li>
+                        <li>Tendido figurado de TUBING para inyección de químicos.</li>
+                        <li>Sistemas neumáticos e hidráulicos.</li>
+                        <li>Tendido figurado de bandejas.</li>
+                        <li>Montaje de instrumentos.</li>
+                    </ul>
+                    <a href="https://wa.me/593988012730?text=Hola,%20busco%20información%20sobre%20Instrumentación"
+                        class="btn-primary small mt-auto" target="_blank">Cotizar Instrumentación</a>
+                </div>
+            </div>
+
+            <!-- Service Card 3: Sistema de Control -->
+            <div class="card reveal-up" style="transition-delay: 0.3s;">
+                <div class="card-header bg-control">
+                    <i class="fa-solid fa-microchip hover-trigger"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Sistema de Control</h3>
+
+                    <!-- Minigalería de imágenes -->
+                    <div class="gallery-images">
+                        <img src="dist/sistemadecontrol.png" alt="Control" class="gallery-thumb"
+                            onclick="openModal(['dist/sistemadecontrol.png'], 0)">
+                    </div>
+
+                    <ul class="service-list">
+                        <li>Montaje de tableros de control (PLC, JB).</li>
+                        <li>Tendido e ingreso conexionado de cables de control.</li>
+                        <li>Tendido figurado de portacables control.</li>
+                        <li>Tuberia CONDUIT.</li>
+                        <li>Instalacion de instrumentos presion, temperatura, caudal y nivel.</li>
+                        <li>Valvulas de control.</li>
+                    </ul>
+                    <a href="https://wa.me/593987024974?text=Hola,%20busco%20información%20sobre%20Sistemas%20de%20Control"
+                        class="btn-primary small mt-auto" target="_blank">Cotizar Sistemas de Control</a>
+                </div>
+            </div>
+
+            <!-- Service Card 4: Equipos de Medición -->
+            <div class="card reveal-up" style="transition-delay: 0.4s;">
+                <div class="card-header bg-measurement">
+                    <i class="fa-solid fa-ruler-combined hover-trigger"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Alquiler de Equipos de Medición</h3>
+
+                    <!-- Minigalería de imágenes -->
+                    <div class="gallery-images">
+                        <img src="dist/alquilerdeequiposdemedicion.png" alt="Equipos de Medición" class="gallery-thumb"
+                            onclick="openModal(['dist/alquilerdeequiposdemedicion.png'], 0)">
+                    </div>
+
+                    <ul class="service-list">
+                        <li>Megeer.</li>
+                        <li>VLF.</li>
+                        <li>Tangente delta.</li>
+                        <li>Descargas parciales.</li>
+                        <li>Medicion de sistema puesta tierra.</li>
+                        <li>Multimetro.</li>
+                        <li>Machinadora.</li>
+                        <li>Saca Bocados.</li>
+                    </ul>
+                    <a href="https://wa.me/593987024974?text=Hola,%20requiero%20equipos%20de%20medición"
+                        class="btn-primary small mt-auto" target="_blank">Solicitar Equipos</a>
+                </div>
+            </div>
+
+            <!-- Service Card 5: Venta e Importación -->
+            <div class="card reveal-up" style="transition-delay: 0.5s;">
+                <div class="card-header bg-import">
+                    <i class="fa-solid fa-truck-fast hover-trigger"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Venta e Importación</h3>
+
+                    <!-- Minigalería de imágenes -->
+                    <div class="gallery-images">
+                        <img src="dist/importacion.png" alt="Importación" class="gallery-thumb"
+                            onclick="openModal(['dist/importacion.png'], 0)">
+                    </div>
+
+                    <p style="font-size: 0.95rem; color: var(--text-light); margin-bottom: 1rem;">Importación de
+                        material eléctrico, electromecánico e instrumentación.</p>
+                    <p style="font-size: 0.9rem; color: var(--text-dark); margin-bottom: 1rem;">Ofrecemos la importación
+                        de materiales eléctricos, garantizando calidad, cumplimiento y eficiencia en cada proceso.
+                        Trabajamos con proveedores confiables para ofrecer productos que cumplen con los estándares
+                        requeridos, brindando soluciones, seguridad y oportunas para nuestros clientes.</p>
+                    <a href="https://wa.me/593988012730?text=Hola,%20quiero%20comprar%20materiales%20eléctricos"
+                        class="btn-primary small mt-auto" target="_blank">Cotizar Materiales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Value Proposition -->
+    <section class="about-section" id="nosotros">
+        <div class="section-header reveal">
+            <h2>Quiénes <span class="highlight">Somos</span></h2>
+            <p>Somos una empresa dedicada a la ejecución de trabajos eléctricos e instrumentación, especializada en
+                procesos de alta calidad y eficiencia, brindando soluciones confiables y seguras para cada proyecto.</p>
+        </div>
+
+        <!-- Misión -->
+        <div class="about-row reveal-up">
+            <div class="about-content">
+                <h3><i class="fa-solid fa-bullseye"></i> Misión</h3>
+                <p>Convertirse en la empresa que garantice de manera eficaz con seguridad y calidad de los diferentes
+                    trabajos a nivel de baja, media y alta tensión así como en la industria en la construcción de
+                    múltiples servicios en las áreas eléctrica, instrumentación y control para estar a la vanguardia y
+                    al nivel en este mundo.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
+                    alt="Misión de Circuit Store">
+            </div>
+        </div>
+
+        <!-- Visión -->
+        <div class="about-row reveal-up" style="transition-delay: 0.1s;">
+            <div class="about-content">
+                <h3><i class="fa-solid fa-eye"></i> Visión</h3>
+                <p>Ser una empresa reconocida en el mercado por disponer de los recursos y medios necesarios para
+                    brindar servicios de alta calidad, distinguiéndose por su responsabilidad, compromiso, garantía y
+                    posicionándose a la vanguardia dentro de un entorno globalizado.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=800&q=80"
+                    alt="Visión de Circuit Store">
+            </div>
+        </div>
+
+        <!-- Valores -->
+        <div class="about-row reveal-up" style="transition-delay: 0.2s;">
+            <div class="about-content">
+                <h3><i class="fa-solid fa-gem"></i> Valores</h3>
+                <p>Nuestra cultura corporativa se rige por principios inquebrantables que aseguran el bienestar de
+                    nuestro equipo y la satisfacción total de nuestros clientes.</p>
+                <ul class="values-list-clean">
+                    <li><i class="fa-solid fa-check"></i> Respeto mutuo y profesionalismo.</li>
+                    <li><i class="fa-solid fa-check"></i> Responsabilidad en cada fase del proyecto.</li>
+                    <li><i class="fa-solid fa-check"></i> Compromiso con la excelencia operativa.</li>
+                    <li><i class="fa-solid fa-check"></i> Credibilidad basada en resultados demostrables.</li>
+                    <li><i class="fa-solid fa-check"></i> Transparencia total.</li>
+                </ul>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1578574577315-3fbf0c1024e4?auto=format&fit=crop&w=800&q=80"
+                    alt="Valores Corporativos">
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="clients-section" id="clientes">
+        <div class="section-header reveal">
+            <h2>Nuestros <span class="highlight">Clientes</span></h2>
+            <p>Empresas que confían en nuestra excelencia y calidad operativa.</p>
+        </div>
+        <div class="clients-grid reveal-up">
+            <div class="client-logo"><img src="dist/cyfoil.webp" alt="C&F CYFOIL"></div>
+            <div class="client-logo"><img src="dist/arlift.png" alt="ARLIFT"></div>
+            <div class="client-logo"><img src="dist/logo-final-argus-lateral.png" alt="ARGUS"></div>
+            <div class="client-logo"><img src="dist/logo-sedemi.png" alt="SEDEMI"></div>
+            <div class="client-logo" style="background-color: var(--primary-color);"><img src="dist/companypca.png"
+                    alt="PCA Mantenimiento"></div>
+            <div class="client-logo"><img src="dist/conduto-logo-web.png" alt="CONDUTO"></div>
+            <div class="client-logo text-logo">IESCO ENERGY</div>
+            <div class="client-logo"><img src="dist/logo-heron.png" alt="HERON"></div>
+            <div class="client-logo text-logo">PEC PROJECT</div>
+            <div class="client-logo"><img src="dist/logosimbolo Proctek Group-04.avif" alt="PIL Proctek"></div>
+            <div class="client-logo"><img src="dist/tectotal.png" alt="TECTOTAL"></div>
+            <div class="client-logo text-logo">WELDING</div>
+            <div class="client-logo" style="background-color: var(--primary-color);"><img
+                    src="dist/logo-procopet-blanco.png" alt="PROCOPET"></div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-overlay" style="background: rgba(0, 75, 135, 0.9);"></div>
+        <div class="cta-content reveal">
+            <h2>¿Listo para optimizar su industria?</h2>
+            <p>Contáctenos hoy para recibir una evaluación y cotización personalizada.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://wa.me/593988012730" target="_blank" class="btn-primary large pulse"><i
+                        class="fa-brands fa-whatsapp"></i> Circuits Store (+593 988012730)</a>
+                <a href="https://wa.me/593987024974" target="_blank" class="btn-secondary large"><i
+                        class="fa-brands fa-whatsapp"></i> Soporte (+593 987024974)</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid reveal">
+            <div class="footer-brand">
+                <div class="logo">
+                    <img src="dist/logocircuit.png" alt="Circuit Store Logo"
+                        style="height: 40px; width: auto; filter: brightness(0) invert(1);">
+                </div>
+                <p>Su aliado estratégico para el futuro industrial. Venta & servicios eléctricos.</p>
+            </div>
+            <div class="footer-links-col">
+                <h4>Enlaces</h4>
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#clientes">Clientes</a>
+            </div>
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p><i class="fa-solid fa-envelope"></i> marcotimbila1690@gmail.com</p>
+                <p><i class="fa-solid fa-envelope"></i> marvin_1690@hotmail.com</p>
+                <p><i class="fa-solid fa-location-dot"></i> Av. Carapungo y Tupac Yupanqui. Pichincha, Quito</p>
+                <p><i class="fa-solid fa-location-dot"></i> Av. Aguarico pinas y turismo ecológico 01 pb. (Coca)</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 CIRCUIT Store - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Image Lightbox Modal -->
+    <div id="image-modal" class="modal">
+        <span class="modal-close" id="modal-close">&times;</span>
+        <div class="modal-content">
+            <img id="modal-image" src="" alt="Enlarged Image">
+            <div id="modal-caption" class="modal-caption"></div>
+            <!-- Botones de navegación para la galería -->
+            <a class="modal-prev" id="modal-prev">&#10094;</a>
+            <a class="modal-next" id="modal-next">&#10095;</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
