@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // En PC la proporción será más ancha (500x650).
     // En Celulares será deliberadamente más delgada y alta (e.g., 400x730).
     const isMobile = window.innerWidth < 768;
-    const baseWidth = isMobile ? 400 : 500;
-    const baseHeight = isMobile ? 730 : 650;
+    const baseWidth = isMobile ? 390 : 470;
+    const baseHeight = isMobile ? 777 : 650;
 
     function initFlipbook() {
         const pageFlip = new St.PageFlip(flipBookElement, {
