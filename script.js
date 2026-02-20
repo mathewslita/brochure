@@ -8,11 +8,12 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
     }
 
-    // --- CONFIGURACIÓN OPTIMIZADA (FIJA) ---
-    // En monitores y layouts modernos, las imágenes gigantes A4 (1241x1755) rompen el calculo de StPageFlip al usar "fit"
-    // Usaremos un modo de escala fija y dócil que el CSS pueda manejar:
-    const baseWidth = 500; // Ancho base relajado (1000px totales)
-    const baseHeight = 650; // Alto proporcional A4 (500 / 0.707)
+    // --- CONFIGURACIÓN OPTIMIZADA DINÁMICA ---
+    // En PC la proporción será más ancha (500x650).
+    // En Celulares será deliberadamente más delgada y alta (e.g., 400x730).
+    const isMobile = window.innerWidth < 768;
+    const baseWidth = isMobile ? 400 : 500;
+    const baseHeight = isMobile ? 730 : 650;
 
     function initFlipbook() {
         const pageFlip = new St.PageFlip(flipBookElement, {
