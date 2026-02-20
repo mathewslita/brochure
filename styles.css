@@ -282,7 +282,7 @@ img {
     width: 100%;
     height: 100%;
     /* placeholder hero image o imagen genérica industrial */
-    background-image: url('public/page-1.jpg');
+    background-image: url('./assets/areaelectrica1.png');
     background-size: cover;
     background-position: center;
     z-index: 1;
@@ -718,7 +718,7 @@ img {
     padding: 6rem 2rem;
     text-align: center;
     color: #fff;
-    background-image: url('dist/page-7.jpg');
+    background-image: url('./assets/page-7.jpg');
     /* Imagen de cierre u obra */
     background-size: cover;
     background-position: center;
@@ -1047,7 +1047,7 @@ img {
     padding: 6rem 2rem;
     text-align: center;
     color: #fff;
-    background-image: url('public/page-7.jpg');
+    background-image: url('./assets/page-7.jpg');
     /* Imagen de cierre u obra */
     background-size: cover;
     background-position: center;

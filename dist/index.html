@@ -3,85 +3,393 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- Meta estricto para móviles: Bloquea el zoom in/out destructivo al intentar voltear la página con los dedos -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Brochure - Circuit Store</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/assets/index-hxqydgzK.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-CrxA6FLw.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - Circuit Store</title>
+    <!-- Modern Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" crossorigin href="./assets/index-BjrcmBLb.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="flip-book" id="flip-book">
-
-            <div class="page" data-density="hard">
-                <div class="page-content">
-                    <img src="/assets/page-1-BFgMKuMc.jpg" alt="Portada Circuit Store">
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="./assets/logocircuit-IiCgTShD.png" alt="Circuit Store Logo"
+                    style="height: 60px; width: auto; max-width: 150px; object-fit: contain;">
+                <div class="logo-text"
+                    style="display: flex; flex-direction: column; line-height: 1.1; margin-left: 0.5rem;">
+                    <span class="logo-circuit" style="font-size: 1.4rem;">CIRCUIT</span>
+                    <span class="logo-store" style="font-size: 1.4rem;">STORE</span>
                 </div>
             </div>
-
-            <div class="page">
-                <div class="page-content">
-                    <img src="/assets/page-2-DDBR0MwQ.jpg" alt="Página 2">
-                </div>
+            <div class="nav-links">
+                <a href="#servicios" class="nav-link">Servicios</a>
+                <a href="#nosotros" class="nav-link">Nosotros</a>
+                <a href="#clientes" class="nav-link">Clientes</a>
+                <a href="https://wa.me/593988012730" target="_blank" class="btn-primary pulse">Contacto <i
+                        class="fa-brands fa-whatsapp"></i></a>
             </div>
+            <button class="menu-toggle" id="mobile-menuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
 
-            <div class="page">
-                <div class="page-content">
-                    <img src="/assets/page-3-Neu63nBJ.jpg" alt="Página 3">
-                </div>
-            </div>
-
-            <div class="page">
-                <div class="page-content">
-                    <img src="/assets/page-4-3NaNHcLD.jpg" alt="Página 4">
-                </div>
-            </div>
-
-            <div class="page">
-                <div class="page-content">
-                    <img src="/assets/page-5-wGf1H9sB.jpg" alt="Página 5">
-                </div>
-            </div>
-
-            <div class="page">
-                <div class="page-content">
-                    <img src="/assets/page-6-CZ_pu5WE.jpg" alt="Página 6">
-                </div>
-            </div>
-
-            <div class="page">
-                <div class="page-content">
-                    <img src="/assets/page-7-DOUtTk3F.jpg" alt="Página 7">
-                </div>
-            </div>
-
-            <div class="page" data-density="hard">
-                <div class="page-content closing-page">
-                    <img src="/assets/page-8-DUftYnOU.png" alt="Cierre de Proyecto" class="closing-img">
-                    <div class="text-content">
-                        <h2>SU ALIADO ESTRATÉGICO</h2>
-                        <h3>PARA EL FUTURO INDUSTRIAL</h3>
-
-                        <p>En <strong>CIRCUIT STORE</strong>, no solo ejecutamos trabajos; entregamos tranquilidad
-                            operativa.</p>
-                        <p>Nuestra combinación de experiencia en campo, suministro de materiales de calidad y compromiso
-                            inquebrantable con la seguridad nos convierte en la opción confiable para sus desafíos más
-                            críticos.</p>
-
-
-                        <div class="closing-footer">
-                            © 2026 CIRCUIT STORE - Todos los derechos reservados.
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="close-menu" id="close-menuBtn"><i class="fa-solid fa-xmark"></i></button>
+        <div class="mobile-nav-links">
+            <a href="#servicios" class="mobile-link">Servicios</a>
+            <a href="#nosotros" class="mobile-link">Nosotros</a>
+            <a href="#clientes" class="mobile-link">Clientes</a>
+            <a href="https://wa.me/593988012730" target="_blank" class="btn-primary pulse mobile-btn">Contacto <i
+                    class="fa-brands fa-whatsapp"></i></a>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.js"></script>
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-background" style="background-image: url('./assets/areaelectrica1-BOfCaBtN.png');"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content reveal">
+            <p class="hero-subtitle">Venta & Servicios Eléctricos</p>
+            <h1 class="hero-title">Soluciones Seguras y <span class="highlight">Confiables</span></h1>
+            <p class="hero-description">Especialistas en la ejecución de trabajos eléctricos e instrumentación de alta
+                calidad y eficiencia para cada proyecto.</p>
+            <div class="hero-actions">
+                <a href="#servicios" class="btn-secondary">Explorar Servicios <i class="fa-solid fa-arrow-down"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats/Trust Banner -->
+    <section class="trust-banner">
+        <div class="trust-container reveal">
+            <div class="trust-item">
+                <i class="fa-solid fa-briefcase"></i>
+                <div class="trust-text">
+                    <h4>+30</h4>
+                    <p>Proyectos Realizados</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <i class="fa-solid fa-calendar-check"></i>
+                <div class="trust-text">
+                    <h4>+3 Años</h4>
+                    <p>De Experiencia</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div class="trust-text">
+                    <h4>Garantía</h4>
+                    <p>Calidad y Seguridad</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Catalog Section -->
+    <section class="catalog-section" id="servicios">
+        <div class="section-header reveal">
+            <h2>Nuestros <span class="highlight">Servicios</span></h2>
+            <p>Conozca nuestras especialidades en construcción y mantenimiento industrial a nivel eléctrico,
+                instrumentación y control.</p>
+        </div>
+
+        <div class="catalog-grid">
+            <!-- Service Card 1: Área Eléctrica -->
+            <div class="card reveal-up" style="transition-delay: 0.1s;">
+                <div class="card-header bg-electric">
+                    <i class="fa-solid fa-bolt hover-trigger"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Área Eléctrica</h3>
+
+                    <!-- Minigalería de imágenes -->
+                    <div class="gallery-images">
+                        <img src="./assets/areaelectrica1-BOfCaBtN.png" alt="Área Eléctrica 1" class="gallery-thumb"
+                            onclick="openModal(['./assets/areaelectrica1.png', './assets/areaelectrica2.png', './assets/areaelectrica3.png', './assets/areaelectrica4.png'], 0)">
+                        <img src="./assets/areaelectrica2-nP18HDBO.png" alt="Área Eléctrica 2" class="gallery-thumb"
+                            onclick="openModal(['./assets/areaelectrica1.png', './assets/areaelectrica2.png', './assets/areaelectrica3.png', './assets/areaelectrica4.png'], 1)">
+                        <img src="./assets/areaelectrica3-CZbndhT5.png" alt="Área Eléctrica 3" class="gallery-thumb"
+                            onclick="openModal(['./assets/areaelectrica1.png', './assets/areaelectrica2.png', './assets/areaelectrica3.png', './assets/areaelectrica4.png'], 2)">
+                        <img src="./assets/areaelectrica4-Qw83XFRE.png" alt="Área Eléctrica 4" class="gallery-thumb"
+                            onclick="openModal(['./assets/areaelectrica1.png', './assets/areaelectrica2.png', './assets/areaelectrica3.png', './assets/areaelectrica4.png'], 3)">
+                    </div>
+
+                    <ul class="service-list">
+                        <li>Elaboramos empalmes de media y alta tension en frio, caliente y con micil de 15KV hasta 69
+                            KV.</li>
+                        <li>Puntas terminales en frio, caliente y PFISTERER de 15 kv - 69 kv.</li>
+                        <li>Instalacion de equipos eléctricos, tableros, motores, bombas y equipos de superficie.</li>
+                        <li>Tendido, ingreso y conexionado de cables de fuerza y control.</li>
+                        <li>Sistema de iluminacion interior y perimetral.</li>
+                        <li>Tendido y figurado de bandejas portacables y tuberia conduit.</li>
+                        <li>Sistema de proteccion atmosférica, sistema puesta tierra.</li>
+                        <li>Sircuito cerrado de CCTV.</li>
+                    </ul>
+                    <a href="https://wa.me/593987024974?text=Hola,%20busco%20información%20sobre%20el%20Área%20Eléctrica"
+                        class="btn-primary small mt-auto" target="_blank">Cotizar Área Eléctrica</a>
+                </div>
+            </div>
+
+            <!-- Service Card 2: Instrumentación -->
+            <div class="card reveal-up" style="transition-delay: 0.2s;">
+                <div class="card-header bg-instrumentation">
+                    <i class="fa-solid fa-screwdriver-wrench hover-trigger"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Área de Instrumentación</h3>
+
+                    <!-- Minigalería de imágenes -->
+                    <div class="gallery-images">
+                        <img src="./assets/areadeinstrumentacion-CI7a3YBE.png" alt="Instrumentación" class="gallery-thumb"
+                            onclick="openModal(['./assets/areadeinstrumentacion.png'], 0)">
+                    </div>
+
+                    <ul class="service-list">
+                        <li>Montaje de sistema de inyección de químicos.</li>
+                        <li>Tendido figurado de TUBING para inyección de químicos.</li>
+                        <li>Sistemas neumáticos e hidráulicos.</li>
+                        <li>Tendido figurado de bandejas.</li>
+                        <li>Montaje de instrumentos.</li>
+                    </ul>
+                    <a href="https://wa.me/593988012730?text=Hola,%20busco%20información%20sobre%20Instrumentación"
+                        class="btn-primary small mt-auto" target="_blank">Cotizar Instrumentación</a>
+                </div>
+            </div>
+
+            <!-- Service Card 3: Sistema de Control -->
+            <div class="card reveal-up" style="transition-delay: 0.3s;">
+                <div class="card-header bg-control">
+                    <i class="fa-solid fa-microchip hover-trigger"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Sistema de Control</h3>
+
+                    <!-- Minigalería de imágenes -->
+                    <div class="gallery-images">
+                        <img src="./assets/sistemadecontrol-CnoUDA2k.png" alt="Control" class="gallery-thumb"
+                            onclick="openModal(['./assets/sistemadecontrol.png'], 0)">
+                    </div>
+
+                    <ul class="service-list">
+                        <li>Montaje de tableros de control (PLC, JB).</li>
+                        <li>Tendido e ingreso conexionado de cables de control.</li>
+                        <li>Tendido figurado de portacables control.</li>
+                        <li>Tuberia CONDUIT.</li>
+                        <li>Instalacion de instrumentos presion, temperatura, caudal y nivel.</li>
+                        <li>Valvulas de control.</li>
+                    </ul>
+                    <a href="https://wa.me/593987024974?text=Hola,%20busco%20información%20sobre%20Sistemas%20de%20Control"
+                        class="btn-primary small mt-auto" target="_blank">Cotizar Sistemas de Control</a>
+                </div>
+            </div>
+
+            <!-- Service Card 4: Equipos de Medición -->
+            <div class="card reveal-up" style="transition-delay: 0.4s;">
+                <div class="card-header bg-measurement">
+                    <i class="fa-solid fa-ruler-combined hover-trigger"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Alquiler de Equipos de Medición</h3>
+
+                    <!-- Minigalería de imágenes -->
+                    <div class="gallery-images">
+                        <img src="./assets/alquilerdeequiposdemedicion-C4KCtLML.png" alt="Equipos de Medición"
+                            class="gallery-thumb" onclick="openModal(['./assets/alquilerdeequiposdemedicion.png'], 0)">
+                    </div>
+
+                    <ul class="service-list">
+                        <li>Megeer.</li>
+                        <li>VLF.</li>
+                        <li>Tangente delta.</li>
+                        <li>Descargas parciales.</li>
+                        <li>Medicion de sistema puesta tierra.</li>
+                        <li>Multimetro.</li>
+                        <li>Machinadora.</li>
+                        <li>Saca Bocados.</li>
+                    </ul>
+                    <a href="https://wa.me/593987024974?text=Hola,%20requiero%20equipos%20de%20medición"
+                        class="btn-primary small mt-auto" target="_blank">Solicitar Equipos</a>
+                </div>
+            </div>
+
+            <!-- Service Card 5: Venta e Importación -->
+            <div class="card reveal-up" style="transition-delay: 0.5s;">
+                <div class="card-header bg-import">
+                    <i class="fa-solid fa-truck-fast hover-trigger"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Venta e Importación</h3>
+
+                    <!-- Minigalería de imágenes -->
+                    <div class="gallery-images">
+                        <img src="./assets/importacion-L1vdwM3W.png" alt="Importación" class="gallery-thumb"
+                            onclick="openModal(['./assets/importacion.png'], 0)">
+                    </div>
+
+                    <p style="font-size: 0.95rem; color: var(--text-light); margin-bottom: 1rem;">Importación de
+                        material eléctrico, electromecánico e instrumentación.</p>
+                    <p style="font-size: 0.9rem; color: var(--text-dark); margin-bottom: 1rem;">Ofrecemos la importación
+                        de materiales eléctricos, garantizando calidad, cumplimiento y eficiencia en cada proceso.
+                        Trabajamos con proveedores confiables para ofrecer productos que cumplen con los estándares
+                        requeridos, brindando soluciones, seguridad y oportunas para nuestros clientes.</p>
+                    <a href="https://wa.me/593988012730?text=Hola,%20quiero%20comprar%20materiales%20eléctricos"
+                        class="btn-primary small mt-auto" target="_blank">Cotizar Materiales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Value Proposition -->
+    <section class="about-section" id="nosotros">
+        <div class="section-header reveal">
+            <h2>Quiénes <span class="highlight">Somos</span></h2>
+            <p>Somos una empresa dedicada a la ejecución de trabajos eléctricos e instrumentación, especializada en
+                procesos de alta calidad y eficiencia, brindando soluciones confiables y seguras para cada proyecto.</p>
+        </div>
+
+        <!-- Misión -->
+        <div class="about-row reveal-up">
+            <div class="about-content">
+                <h3><i class="fa-solid fa-bullseye"></i> Misión</h3>
+                <p>Convertirse en la empresa que garantice de manera eficaz con seguridad y calidad de los diferentes
+                    trabajos a nivel de baja, media y alta tensión así como en la industria en la construcción de
+                    múltiples servicios en las áreas eléctrica, instrumentación y control para estar a la vanguardia y
+                    al nivel en este mundo.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
+                    alt="Misión de Circuit Store">
+            </div>
+        </div>
+
+        <!-- Visión -->
+        <div class="about-row reveal-up" style="transition-delay: 0.1s;">
+            <div class="about-content">
+                <h3><i class="fa-solid fa-eye"></i> Visión</h3>
+                <p>Ser una empresa reconocida en el mercado por disponer de los recursos y medios necesarios para
+                    brindar servicios de alta calidad, distinguiéndose por su responsabilidad, compromiso, garantía y
+                    posicionándose a la vanguardia dentro de un entorno globalizado.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=800&q=80"
+                    alt="Visión de Circuit Store">
+            </div>
+        </div>
+
+        <!-- Valores -->
+        <div class="about-row reveal-up" style="transition-delay: 0.2s;">
+            <div class="about-content">
+                <h3><i class="fa-solid fa-gem"></i> Valores</h3>
+                <p>Nuestra cultura corporativa se rige por principios inquebrantables que aseguran el bienestar de
+                    nuestro equipo y la satisfacción total de nuestros clientes.</p>
+                <ul class="values-list-clean">
+                    <li><i class="fa-solid fa-check"></i> Respeto mutuo y profesionalismo.</li>
+                    <li><i class="fa-solid fa-check"></i> Responsabilidad en cada fase del proyecto.</li>
+                    <li><i class="fa-solid fa-check"></i> Compromiso con la excelencia operativa.</li>
+                    <li><i class="fa-solid fa-check"></i> Credibilidad basada en resultados demostrables.</li>
+                    <li><i class="fa-solid fa-check"></i> Transparencia total.</li>
+                </ul>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1578574577315-3fbf0c1024e4?auto=format&fit=crop&w=800&q=80"
+                    alt="Valores Corporativos">
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="clients-section" id="clientes">
+        <div class="section-header reveal">
+            <h2>Nuestros <span class="highlight">Clientes</span></h2>
+            <p>Empresas que confían en nuestra excelencia y calidad operativa.</p>
+        </div>
+        <div class="clients-grid reveal-up">
+            <div class="client-logo"><img src="./assets/cyfoil-D62xs7t1.webp" alt="C&F CYFOIL"></div>
+            <div class="client-logo"><img src="./assets/arlift-19wP3nsp.png" alt="ARLIFT"></div>
+            <div class="client-logo"><img src="./assets/logo-final-argus-lateral-Cl1Qsdq2.png" alt="ARGUS"></div>
+            <div class="client-logo"><img src="data:image/png;base64,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" alt="SEDEMI"></div>
+            <div class="client-logo" style="background-color: var(--primary-color);"><img src="data:image/png;base64,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"
+                    alt="PCA Mantenimiento"></div>
+            <div class="client-logo"><img src="data:image/png;base64,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" alt="CONDUTO"></div>
+            <div class="client-logo text-logo">IESCO ENERGY</div>
+            <div class="client-logo"><img src="./assets/logo-heron-BJLzMjyY.png" alt="HERON"></div>
+            <div class="client-logo text-logo">PEC PROJECT</div>
+            <div class="client-logo"><img src="data:image/avif;base64,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" alt="PIL Proctek"></div>
+            <div class="client-logo"><img src="./assets/tectotal-xM6cwpc1.png" alt="TECTOTAL"></div>
+            <div class="client-logo text-logo">WELDING</div>
+            <div class="client-logo" style="background-color: var(--primary-color);"><img
+                    src="./assets/logo-procopet-blanco-BrijJzxm.png" alt="PROCOPET"></div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-overlay" style="background: rgba(0, 75, 135, 0.9);"></div>
+        <div class="cta-content reveal">
+            <h2>¿Listo para optimizar su industria?</h2>
+            <p>Contáctenos hoy para recibir una evaluación y cotización personalizada.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://wa.me/593988012730" target="_blank" class="btn-primary large pulse"><i
+                        class="fa-brands fa-whatsapp"></i> Circuits Store (+593 988012730)</a>
+                <a href="https://wa.me/593987024974" target="_blank" class="btn-secondary large"><i
+                        class="fa-brands fa-whatsapp"></i> Soporte (+593 987024974)</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid reveal">
+            <div class="footer-brand">
+                <div class="logo">
+                    <img src="./assets/logocircuit-IiCgTShD.png" alt="Circuit Store Logo"
+                        style="height: 40px; width: auto; filter: brightness(0) invert(1);">
+                </div>
+                <p>Su aliado estratégico para el futuro industrial. Venta & servicios eléctricos.</p>
+            </div>
+            <div class="footer-links-col">
+                <h4>Enlaces</h4>
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#clientes">Clientes</a>
+            </div>
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p><i class="fa-solid fa-envelope"></i> marcotimbila1690@gmail.com</p>
+                <p><i class="fa-solid fa-envelope"></i> marvin_1690@hotmail.com</p>
+                <p><i class="fa-solid fa-location-dot"></i> Av. Carapungo y Tupac Yupanqui. Pichincha, Quito</p>
+                <p><i class="fa-solid fa-location-dot"></i> Av. Aguarico pinas y turismo ecológico 01 pb. (Coca)</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 CIRCUIT Store - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Image Lightbox Modal -->
+    <div id="image-modal" class="modal">
+        <span class="modal-close" id="modal-close">&times;</span>
+        <div class="modal-content">
+            <img id="modal-image" src="" alt="Enlarged Image">
+            <div id="modal-caption" class="modal-caption"></div>
+            <!-- Botones de navegación para la galería -->
+            <a class="modal-prev" id="modal-prev">&#10094;</a>
+            <a class="modal-next" id="modal-next">&#10095;</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
