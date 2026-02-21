@@ -30,6 +30,7 @@
             </div>
             <div class="nav-links">
                 <a href="#servicios" class="nav-link">Servicios</a>
+                <a href="#proyectos" class="nav-link">Proyectos</a>
                 <a href="#nosotros" class="nav-link">Nosotros</a>
                 <a href="#clientes" class="nav-link">Clientes</a>
                 <a href="https://wa.me/593988012730" target="_blank" class="btn-primary pulse">Contacto <i
@@ -46,6 +47,7 @@
         <button class="close-menu" id="close-menuBtn"><i class="fa-solid fa-xmark"></i></button>
         <div class="mobile-nav-links">
             <a href="#servicios" class="mobile-link">Servicios</a>
+            <a href="#proyectos" class="mobile-link">Proyectos</a>
             <a href="#nosotros" class="mobile-link">Nosotros</a>
             <a href="#clientes" class="mobile-link">Clientes</a>
             <a href="https://wa.me/593988012730" target="_blank" class="btn-primary pulse mobile-btn">Contacto <i
@@ -55,7 +57,8 @@
 
     <!-- Hero Section -->
     <section class="hero" id="inicio">
-        <div class="hero-background" style="background-image: url('./assets/areaelectrica1.png');"></div>
+        <div class="hero-background"
+            style="background-image: url('./assets/Tuberías industriales con mechero al fondo.jpeg');"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content reveal">
             <p class="hero-subtitle">Venta & Servicios Eléctricos</p>
@@ -105,145 +108,86 @@
 
         <div class="catalog-grid">
             <!-- Service Card 1: Área Eléctrica -->
-            <div class="card reveal-up" style="transition-delay: 0.1s;">
-                <div class="card-header bg-electric">
-                    <i class="fa-solid fa-bolt hover-trigger"></i>
+            <div class="card service-card reveal-up" style="transition-delay: 0.1s;">
+                <div class="service-card-image" onclick="openServiceDetail('electrica')" style="cursor: pointer;">
+                    <img src="./assets/Linierosentransformadordeposte.jpeg" alt="Área Eléctrica">
                 </div>
                 <div class="card-content">
                     <h3>Área Eléctrica</h3>
-
-                    <!-- Minigalería de imágenes -->
-                    <div class="gallery-images">
-                        <img src="./assets/areaelectrica1.png" alt="Área Eléctrica 1" class="gallery-thumb"
-                            onclick="openGallery(this)">
-                        <img src="./assets/areaelectrica2.png" alt="Área Eléctrica 2" class="gallery-thumb"
-                            onclick="openGallery(this)">
-                        <img src="./assets/areaelectrica3.png" alt="Área Eléctrica 3" class="gallery-thumb"
-                            onclick="openGallery(this)">
-                        <img src="./assets/areaelectrica4.png" alt="Área Eléctrica 4" class="gallery-thumb"
-                            onclick="openGallery(this)">
-                    </div>
-
-                    <ul class="service-list">
-                        <li>Elaboramos empalmes de media y alta tension en frio, caliente y con micil de 15KV hasta 69
-                            KV.</li>
-                        <li>Puntas terminales en frio, caliente y PFISTERER de 15 kv - 69 kv.</li>
-                        <li>Instalacion de equipos eléctricos, tableros, motores, bombas y equipos de superficie.</li>
-                        <li>Tendido, ingreso y conexionado de cables de fuerza y control.</li>
-                        <li>Sistema de iluminacion interior y perimetral.</li>
-                        <li>Tendido y figurado de bandejas portacables y tuberia conduit.</li>
-                        <li>Sistema de proteccion atmosférica, sistema puesta tierra.</li>
-                        <li>Sircuito cerrado de CCTV.</li>
-                    </ul>
-                    <a href="https://wa.me/593987024974?text=Hola,%20busco%20información%20sobre%20el%20Área%20Eléctrica"
-                        class="btn-primary small mt-auto" target="_blank">Cotizar Área Eléctrica</a>
+                    <p class="service-short-desc">Elaboración de empalmes, instalación de equipos eléctricos y sistemas
+                        de protección para alta y media tensión.</p>
+                    <button class="btn-read-more mt-auto" onclick="openServiceDetail('electrica')">Leer más <i
+                            class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </div>
 
             <!-- Service Card 2: Instrumentación -->
-            <div class="card reveal-up" style="transition-delay: 0.2s;">
-                <div class="card-header bg-instrumentation">
-                    <i class="fa-solid fa-screwdriver-wrench hover-trigger"></i>
+            <div class="card service-card reveal-up" style="transition-delay: 0.2s;">
+                <div class="service-card-image" onclick="openServiceDetail('instrumentacion')" style="cursor: pointer;">
+                    <img src="./assets/Paneldeaceroconmanómetrosypalancasrojas.jpeg" alt="Instrumentación">
                 </div>
                 <div class="card-content">
                     <h3>Área de Instrumentación</h3>
-
-                    <!-- Minigalería de imágenes -->
-                    <div class="gallery-images">
-                        <img src="./assets/areadeinstrumentacion.png" alt="Instrumentación" class="gallery-thumb"
-                            onclick="openGallery(this)">
-                    </div>
-
-                    <ul class="service-list">
-                        <li>Montaje de sistema de inyección de químicos.</li>
-                        <li>Tendido figurado de TUBING para inyección de químicos.</li>
-                        <li>Sistemas neumáticos e hidráulicos.</li>
-                        <li>Tendido figurado de bandejas.</li>
-                        <li>Montaje de instrumentos.</li>
-                    </ul>
-                    <a href="https://wa.me/593988012730?text=Hola,%20busco%20información%20sobre%20Instrumentación"
-                        class="btn-primary small mt-auto" target="_blank">Cotizar Instrumentación</a>
+                    <p class="service-short-desc">Montaje de sistemas de inyección de químicos, tubing y sistemas
+                        neumáticos o hidráulicos.</p>
+                    <button class="btn-read-more mt-auto" onclick="openServiceDetail('instrumentacion')">Leer más <i
+                            class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </div>
 
-            <!-- Service Card 3: Sistema de Control -->
-            <div class="card reveal-up" style="transition-delay: 0.3s;">
-                <div class="card-header bg-control">
-                    <i class="fa-solid fa-microchip hover-trigger"></i>
+            <!-- Service Card 3: Medición y Pruebas -->
+            <div class="card service-card reveal-up" style="transition-delay: 0.3s;">
+                <div class="service-card-image" onclick="openServiceDetail('medicion')" style="cursor: pointer;">
+                    <img src="./assets/pruebasdieléctricas.jpeg" alt="Equipos de Medición">
                 </div>
                 <div class="card-content">
-                    <h3>Sistema de Control</h3>
-
-                    <!-- Minigalería de imágenes -->
-                    <div class="gallery-images">
-                        <img src="./assets/sistemadecontrol.png" alt="Control" class="gallery-thumb"
-                            onclick="openGallery(this)">
-                    </div>
-
-                    <ul class="service-list">
-                        <li>Montaje de tableros de control (PLC, JB).</li>
-                        <li>Tendido e ingreso conexionado de cables de control.</li>
-                        <li>Tendido figurado de portacables control.</li>
-                        <li>Tuberia CONDUIT.</li>
-                        <li>Instalacion de instrumentos presion, temperatura, caudal y nivel.</li>
-                        <li>Valvulas de control.</li>
-                    </ul>
-                    <a href="https://wa.me/593987024974?text=Hola,%20busco%20información%20sobre%20Sistemas%20de%20Control"
-                        class="btn-primary small mt-auto" target="_blank">Cotizar Sistemas de Control</a>
+                    <h3>Medición y Pruebas</h3>
+                    <p class="service-short-desc">Equipos de precisión, diagnóstico y pruebas eléctricas avanzadas
+                        certificadas para alquiler por día o proyecto.</p>
+                    <button class="btn-read-more mt-auto" onclick="openServiceDetail('medicion')">Leer más <i
+                            class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </div>
 
-            <!-- Service Card 4: Equipos de Medición -->
-            <div class="card reveal-up" style="transition-delay: 0.4s;">
-                <div class="card-header bg-measurement">
-                    <i class="fa-solid fa-ruler-combined hover-trigger"></i>
+            <!-- Service Card 4: Maquinaria y Potencia -->
+            <div class="card service-card reveal-up" style="transition-delay: 0.4s;">
+                <div class="service-card-image" onclick="openServiceDetail('maquinaria')" style="cursor: pointer;">
+                    <img src="./assets/generadores.jpg" alt="Maquinaria de Potencia">
                 </div>
                 <div class="card-content">
-                    <h3>Alquiler de Equipos de Medición</h3>
-
-                    <!-- Minigalería de imágenes -->
-                    <div class="gallery-images">
-                        <img src="./assets/alquilerdeequiposdemedicion.png" alt="Equipos de Medición"
-                            class="gallery-thumb" onclick="openGallery(this)">
-                    </div>
-
-                    <ul class="service-list">
-                        <li>Megeer.</li>
-                        <li>VLF.</li>
-                        <li>Tangente delta.</li>
-                        <li>Descargas parciales.</li>
-                        <li>Medicion de sistema puesta tierra.</li>
-                        <li>Multimetro.</li>
-                        <li>Machinadora.</li>
-                        <li>Saca Bocados.</li>
-                    </ul>
-                    <a href="https://wa.me/593987024974?text=Hola,%20requiero%20equipos%20de%20medición"
-                        class="btn-primary small mt-auto" target="_blank">Solicitar Equipos</a>
+                    <h3>Maquinaria y Fuerza</h3>
+                    <p class="service-short-desc">Maquinaria de fuerza pesada: generadores de alta capacidad,
+                        machinadoras y sacabocados para trabajos exigentes.</p>
+                    <button class="btn-read-more mt-auto" onclick="openServiceDetail('maquinaria')">Leer más <i
+                            class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </div>
 
-            <!-- Service Card 5: Venta e Importación -->
-            <div class="card reveal-up" style="transition-delay: 0.5s;">
-                <div class="card-header bg-import">
-                    <i class="fa-solid fa-truck-fast hover-trigger"></i>
+            <!-- Service Card 5: Seguridad y Accesorios -->
+            <div class="card service-card reveal-up" style="transition-delay: 0.5s;">
+                <div class="service-card-image" onclick="openServiceDetail('seguridad')" style="cursor: pointer;">
+                    <img src="./assets/equipo_seguridad_personal.png" alt="Seguridad Industrial y Accesorios">
                 </div>
                 <div class="card-content">
-                    <h3>Venta e Importación</h3>
+                    <h3>Seguridad y Accesorios</h3>
+                    <p class="service-short-desc">Equipos de seguridad operativa, protección personal certificada,
+                        herramientas (etiquetadoras) y accesorios de red.</p>
+                    <button class="btn-read-more mt-auto" onclick="openServiceDetail('seguridad')">Leer más <i
+                            class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
 
-                    <!-- Minigalería de imágenes -->
-                    <div class="gallery-images">
-                        <img src="./assets/importacion.png" alt="Importación" class="gallery-thumb"
-                            onclick="openGallery(this)">
-                    </div>
-
-                    <p style="font-size: 0.95rem; color: var(--text-light); margin-bottom: 1rem;">Importación de
-                        material eléctrico, electromecánico e instrumentación.</p>
-                    <p style="font-size: 0.9rem; color: var(--text-dark); margin-bottom: 1rem;">Ofrecemos la importación
-                        de materiales eléctricos, garantizando calidad, cumplimiento y eficiencia en cada proceso.
-                        Trabajamos con proveedores confiables para ofrecer productos que cumplen con los estándares
-                        requeridos, brindando soluciones, seguridad y oportunas para nuestros clientes.</p>
-                    <a href="https://wa.me/593988012730?text=Hola,%20quiero%20comprar%20materiales%20eléctricos"
-                        class="btn-primary small mt-auto" target="_blank">Cotizar Materiales</a>
+            <!-- Service Card 6: Venta -->
+            <div class="card service-card reveal-up" style="transition-delay: 0.6s;">
+                <div class="service-card-image" onclick="openServiceDetail('venta')" style="cursor: pointer;">
+                    <img src="./assets/material_electrico_venta.png" alt="Venta">
+                </div>
+                <div class="card-content">
+                    <h3>Venta</h3>
+                    <p class="service-short-desc">Venta e importación de material eléctrico, electromecánico e
+                        instrumentación de las mejores marcas.</p>
+                    <button class="btn-read-more mt-auto" onclick="openServiceDetail('venta')">Leer más <i
+                            class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </div>
         </div>
@@ -261,14 +205,12 @@
         <div class="about-row reveal-up">
             <div class="about-content">
                 <h3><i class="fa-solid fa-bullseye"></i> Misión</h3>
-                <p>Convertirse en la empresa que garantice de manera eficaz con seguridad y calidad de los diferentes
-                    trabajos a nivel de baja, media y alta tensión así como en la industria en la construcción de
-                    múltiples servicios en las áreas eléctrica, instrumentación y control para estar a la vanguardia y
-                    al nivel en este mundo.</p>
+                <p>Consolidarnos como una empresa líder que garantice de manera eficaz, con seguridad y calidad, la
+                    ejecución de trabajos en baja, media y alta tensión. Proveer servicios integrales en las áreas
+                    eléctrica, de instrumentación y control, manteniéndonos siempre a la vanguardia de la industria.</p>
             </div>
             <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
-                    alt="Misión de Circuit Store">
+                <img src="./assets/Linierosentransformadordeposte.jpeg" alt="Misión de Circuit Store">
             </div>
         </div>
 
@@ -276,13 +218,12 @@
         <div class="about-row reveal-up" style="transition-delay: 0.1s;">
             <div class="about-content">
                 <h3><i class="fa-solid fa-eye"></i> Visión</h3>
-                <p>Ser una empresa reconocida en el mercado por disponer de los recursos y medios necesarios para
-                    brindar servicios de alta calidad, distinguiéndose por su responsabilidad, compromiso, garantía y
-                    posicionándose a la vanguardia dentro de un entorno globalizado.</p>
+                <p>Ser una empresa reconocida en la industria por disponer de los recursos y tecnología necesarios para
+                    brindar servicios de alta calidad, distinguiéndonos por nuestra responsabilidad, firme compromiso y
+                    garantía de excelencia, posicionándonos competitivamente en un entorno globalizado.</p>
             </div>
             <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=800&q=80"
-                    alt="Visión de Circuit Store">
+                <img src="./assets/Zanjalargaconductosnegros.png" alt="Visión de Circuit Store">
             </div>
         </div>
 
@@ -301,8 +242,78 @@
                 </ul>
             </div>
             <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1578574577315-3fbf0c1024e4?auto=format&fit=crop&w=800&q=80"
-                    alt="Valores Corporativos">
+                <img src="./assets/pruebasdieléctricas.jpeg" alt="Valores Corporativos">
+            </div>
+        </div>
+
+        <!-- Público Objetivo -->
+        <div class="about-row reveal-up" style="transition-delay: 0.3s;">
+            <div class="about-content">
+                <h3><i class="fa-solid fa-users-gear"></i> A quién atendemos</h3>
+                <p>Nuestros servicios están diseñados y dirigidos para satisfacer las altas exigencias de los siguientes
+                    sectores:</p>
+                <ul class="values-list-clean" style="margin-top: 1rem;">
+                    <li><i class="fa-solid fa-helmet-safety"></i> <strong>Sector Minero:</strong> Soluciones robustas
+                        para entornos de alta exigencia.</li>
+                    <li><i class="fa-solid fa-oil-well"></i> <strong>Sector Petrolero:</strong> Cumplimiento estricto de
+                        normas de seguridad e instrumentación precisa.</li>
+                    <li><i class="fa-solid fa-industry"></i> <strong>Sector Industrial:</strong> Optimización,
+                        mantenimiento y montaje para producción continua.</li>
+                </ul>
+            </div>
+            <div class="about-image">
+                <img src="./assets/sectorpetrolero.jpg" alt="Público Objetivo Sector Petrolero e Industrial">
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-section" id="proyectos">
+        <div class="section-header reveal">
+            <h2>Proyectos <span class="highlight">Principales</span></h2>
+            <p>Conozca algunos de nuestros trabajos más destacados en campo.</p>
+        </div>
+
+        <div class="portfolio-grid">
+            <!-- Proyecto 1 -->
+            <div class="portfolio-card reveal-up">
+                <div class="portfolio-image">
+                    <img src="./assets/Tuberías industriales con mechero al fondo.jpeg"
+                        alt="Construcción de Facilidades de Producción">
+                </div>
+                <div class="portfolio-content">
+                    <h4>Construcción de Facilidades de Producción</h4>
+                    <span class="portfolio-service">MONTAJE MECÁNICO</span>
+                    <p>Montaje de tuberías de proceso, integración de sistemas y pruebas pre-comisionamiento en
+                        facilidades petroleras.</p>
+                </div>
+            </div>
+
+            <!-- Proyecto 2 -->
+            <div class="portfolio-card reveal-up" style="transition-delay: 0.1s;">
+                <div class="portfolio-image">
+                    <img src="./assets/Técnico de naranja cableando instrumentos.jpeg"
+                        alt="Instrumentación en Cabezales de Pozo">
+                </div>
+                <div class="portfolio-content">
+                    <h4>Instrumentación en Cabezales de Pozo</h4>
+                    <span class="portfolio-service">INSTRUMENTACIÓN Y CONTROL</span>
+                    <p>Instalación, cableado y calibración de transmisores de presión y temperatura para el monitoreo en
+                        tiempo real.</p>
+                </div>
+            </div>
+
+            <!-- Proyecto 3 -->
+            <div class="portfolio-card reveal-up" style="transition-delay: 0.2s;">
+                <div class="portfolio-image">
+                    <img src="./assets/MontajeElectromecánico.png" alt="Instalación de Sistemas de Bombeo">
+                </div>
+                <div class="portfolio-content">
+                    <h4>Instalación de Sistemas de Bombeo</h4>
+                    <span class="portfolio-service">MONTAJE ELECTROMECÁNICO</span>
+                    <p>Ubicación de equipos dinámicos, alineación de motores y ruteo de tuberías sobre plataformas de
+                        concreto (Skids).</p>
+                </div>
             </div>
         </div>
     </section>
@@ -377,7 +388,46 @@
         </div>
     </footer>
 
-    <!-- Image Lightbox Modal -->
+    <!-- E-Commerce Style Service Modal -->
+    <div id="service-detail-modal" class="service-modal-overlay">
+        <div class="service-modal-content">
+            <button class="service-modal-close" onclick="closeServiceDetail()"><i
+                    class="fa-solid fa-xmark"></i></button>
+
+            <div class="service-modal-grid">
+                <!-- Left: Image Gallery -->
+                <div class="service-modal-gallery">
+                    <div class="service-main-image-container">
+                        <img id="sm-main-img" src="" alt="Servicio Main">
+                        <p id="sm-main-caption" class="service-image-caption"></p>
+                    </div>
+                    <div class="service-thumb-container" id="sm-thumbs">
+                        <!-- Thumbs injected by JS -->
+                    </div>
+                </div>
+
+                <!-- Right: Details -->
+                <div class="service-modal-info">
+                    <span class="service-modal-category" id="sm-category">Categoría</span>
+                    <h2 class="service-modal-title" id="sm-title">Título del Servicio</h2>
+
+                    <div class="service-modal-description" id="sm-description">
+                        <!-- Description/Lists injected by JS -->
+                    </div>
+
+                    <div class="service-modal-pricing">
+                        <p class="pricing-note">Servicios y equipos bajo cotización formal.</p>
+                        <a id="sm-whatsapp-btn" href="#" target="_blank" class="btn-primary large pulse w-100"
+                            style="justify-content: center; width: 100%;">
+                            Cotizar por WhatsApp <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Lightbox Modal (For single gallery view) -->
     <div id="image-modal" class="modal">
         <span class="modal-close" id="modal-close">&times;</span>
         <div class="modal-content">

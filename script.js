@@ -113,7 +113,11 @@ window.openModal = function (imageArray, index) {
 
 function updateModalContent() {
     modalImg.src = currentImages[currentIndex];
-    modalCaption.innerHTML = `Imagen ${currentIndex + 1} de ${currentImages.length}`;
+    if (currentImages.length > 1) {
+        modalCaption.innerHTML = `Imagen ${currentIndex + 1} de ${currentImages.length}`;
+    } else {
+        modalCaption.innerHTML = '';
+    }
 }
 
 function closeModal() {
@@ -162,4 +166,228 @@ document.addEventListener('keydown', (e) => {
     } else if (e.key === 'ArrowRight' && currentImages.length > 1) {
         nextImage();
     }
+});
+
+/* --- 5. E-COMMERCE SERVICE DETAIL MODAL --- */
+const servicesData = {
+    electrica: {
+        title: "Área Eléctrica",
+        category: "Instalación y Mantenimiento",
+        description: `<ul>
+            <li>Elaboramos empalmes de media y alta tensión en frío, caliente y con mísil de 15 kV hasta 69 kV.</li>
+            <li>Puntas terminales en frío, caliente y PFISTERER de 15 kV - 69 kV.</li>
+            <li>Instalación de equipos eléctricos, tableros, motores, bombas y equipos de superficie.</li>
+            <li>Tendido, ingreso y conexionado de cables de fuerza y control.</li>
+            <li>Sistema de iluminación interior y perimetral.</li>
+            <li>Tendido y figurado de bandejas portacables y tubería conduit.</li>
+            <li>Sistema de protección atmosférica, sistema de puesta a tierra.</li>
+            <li>Circuito cerrado de CCTV.</li>
+        </ul>`,
+        images: [
+            { src: "./assets/Tablerodecontrolcableadohacialabase.jpeg", caption: "Gabinete de media tensión y control." },
+            { src: "./assets/Cableadointernodetableroconborneras.jpeg", caption: "Instalación y mantenimiento de tableros eléctricos." },
+            { src: "./assets/Rackdecomunicaciones.jpeg", caption: "Instalación de racks de comunicación y CCTV." }
+        ],
+        whatsappMessage: "Hola, busco información sobre el Área Eléctrica"
+    },
+    instrumentacion: {
+        title: "Área de Instrumentación",
+        category: "Sistemas & Control",
+        description: `<ul>
+            <li>Montaje de sistema de inyección de químicos.</li>
+            <li>Tendido figurado de TUBING para inyección de químicos.</li>
+            <li>Sistemas neumáticos e hidráulicos.</li>
+            <li>Tendido figurado de bandejas.</li>
+            <li>Montaje de instrumentos.</li>
+        </ul>`,
+        images: [
+            { src: "./assets/Técnicosobretanqueverde.jpeg", caption: "Técnico especialista sobre tanque industrial." },
+            { src: "./assets/Técnico de naranja cableando instrumentos.jpeg", caption: "Cableado y verificación de instrumentos de campo." },
+            { src: "./assets/CámaraindustrialPelco.jpeg", caption: "Montaje de sistemas de circuito cerrado industrial." },
+            { src: "./assets/Detalledetransmisoresmanómetrosyválvulas.jpeg", caption: "Detalle de transmisores, manómetros y válvulas de control." }
+        ],
+        whatsappMessage: "Hola, busco información sobre Instrumentación"
+    },
+    medicion: {
+        title: "Medición y Pruebas Eléctricas",
+        category: "Diagnóstico Avanzado",
+        description: `<ul>
+            <li>Megger y VLF.</li>
+            <li>Tangente delta.</li>
+            <li>Descargas parciales.</li>
+            <li>Medición de sistema de puesta a tierra.</li>
+            <li>Multímetro.</li>
+        </ul>`,
+        images: [
+            { src: "./assets/Equipo Megger probando cables.jpeg", caption: "Pruebas dieléctricas con equipo Megger avanzado." },
+            { src: "./assets/maletinamarillofluck.jpeg", caption: "Instrumentos de medición y certificación Fluke." },
+            { src: "./assets/TécnicooperandoequipoMegger.jpeg", caption: "Técnico especialista validando mediciones en campo." }
+        ],
+        whatsappMessage: "Hola, busco información sobre alquiler de equipos de Medición y Pruebas"
+    },
+    maquinaria: {
+        title: "Maquinaria y Herramientas de Potencia",
+        category: "Fuerza y Generación",
+        description: `<ul>
+            <li>Generadores.</li>
+            <li>Machinadoras.</li>
+            <li>Sacabocados.</li>
+        </ul>`,
+        images: [
+            { src: "./assets/generadores.jpg", caption: "Generadores de potencia de alta capacidad." }
+        ],
+        whatsappMessage: "Hola, busco información sobre alquiler de Maquinaria y Potencia"
+    },
+    seguridad: {
+        title: "Equipos de Seguridad y Accesorios",
+        category: "Seguridad y Herramientas Operativas",
+        description: `<ul>
+            <li>Contenedor de empalmes.</li>
+            <li>Etiquetadoras.</li>
+            <li>Pértigas.</li>
+            <li>Guantes dieléctricos.</li>
+        </ul>`,
+        images: [
+            { src: "./assets/equipo_seguridad_personal.png", caption: "Implementos de seguridad personal y dieléctricos." },
+            { src: "./assets/herramientas_operativas_seguridad.png", caption: "Herramientas operativas y accesorios de red." }
+        ],
+        whatsappMessage: "Hola, busco información sobre alquiler de equipos de Seguridad y Accesorios"
+    },
+    venta: {
+        title: "Venta",
+        category: "Comercialización",
+        description: `<p>Ofrecemos la venta de materiales eléctricos, garantizando calidad, cumplimiento y eficiencia en cada proceso. Trabajamos con proveedores confiables para ofrecer productos que cumplen con los estándares requeridos, brindando soluciones, seguridad y oportunas para nuestros clientes.</p>`,
+        images: [
+            { src: "./assets/material_electrico_venta.png", caption: "Materiales y componentes eléctricos premium." }
+        ],
+        whatsappMessage: "Hola, quiero comprar materiales eléctricos"
+    }
+};
+
+const serviceModal = document.getElementById('service-detail-modal');
+const smMainImg = document.getElementById('sm-main-img');
+const smThumbs = document.getElementById('sm-thumbs');
+const smCategory = document.getElementById('sm-category');
+const smTitle = document.getElementById('sm-title');
+const smDescription = document.getElementById('sm-description');
+const smWhatsappBtn = document.getElementById('sm-whatsapp-btn');
+
+const smMainCaption = document.getElementById('sm-main-caption');
+
+window.openServiceDetail = function (serviceKey) {
+    const data = servicesData[serviceKey];
+    if (!data) return;
+
+    // Populate Right Info
+    smCategory.innerText = data.category;
+    smTitle.innerText = data.title;
+    smDescription.innerHTML = data.description;
+
+    // Set WhatsApp link
+    smWhatsappBtn.href = `https://wa.me/593988012730?text=${encodeURIComponent(data.whatsappMessage)}`;
+
+    // Populate Left Gallery
+    smMainImg.src = data.images[0].src;
+
+    // Set initial caption
+    if (data.images[0].caption) {
+        smMainCaption.innerText = data.images[0].caption;
+        smMainCaption.classList.add('show');
+    } else {
+        smMainCaption.innerText = '';
+        smMainCaption.classList.remove('show');
+    }
+
+    smThumbs.innerHTML = '';
+
+    // Variables for click-to-next-image on main image
+    let currentImgIndex = 0;
+
+    if (data.images.length > 1) {
+        // Setup clicking on the main image to go to the next one
+        smMainImg.style.cursor = 'pointer';
+        smMainImg.onclick = function () {
+            currentImgIndex = (currentImgIndex + 1) % data.images.length;
+            const targetImgObj = data.images[currentImgIndex];
+            smMainImg.src = targetImgObj.src;
+
+            // Update caption
+            if (targetImgObj.caption) {
+                smMainCaption.innerText = targetImgObj.caption;
+                smMainCaption.classList.add('show');
+            } else {
+                smMainCaption.innerText = '';
+                smMainCaption.classList.remove('show');
+            }
+
+            // Update active state
+            document.querySelectorAll('.sm-thumb').forEach((t, i) => {
+                if (i === currentImgIndex) t.classList.add('active');
+                else t.classList.remove('active');
+            });
+        };
+
+        data.images.forEach((imgObj, index) => {
+            const img = document.createElement('img');
+            img.src = imgObj.src;
+            img.className = 'sm-thumb' + (index === 0 ? ' active' : '');
+            img.onclick = function () {
+                currentImgIndex = index;
+                smMainImg.src = imgObj.src;
+
+                // Update caption
+                if (imgObj.caption) {
+                    smMainCaption.innerText = imgObj.caption;
+                    smMainCaption.classList.add('show');
+                } else {
+                    smMainCaption.innerText = '';
+                    smMainCaption.classList.remove('show');
+                }
+
+                // Update active state
+                document.querySelectorAll('.sm-thumb').forEach(t => t.classList.remove('active'));
+                img.classList.add('active');
+            };
+            smThumbs.appendChild(img);
+        });
+    } else {
+        // If only 1 image, remove pointer cursor and click handler
+        smMainImg.style.cursor = 'default';
+        smMainImg.onclick = null;
+    }
+
+    // Show modal
+    serviceModal.classList.add('show');
+
+    document.body.style.overflow = 'hidden';
+};
+
+window.closeServiceDetail = function () {
+    serviceModal.classList.remove('show');
+    document.body.style.overflow = '';
+};
+
+// Close when clicking outside content
+serviceModal.addEventListener('click', (e) => {
+    if (e.target === serviceModal) {
+        window.closeServiceDetail();
+    }
+});
+
+document.addEventListener('keydown', (e) => {
+    if (serviceModal.classList.contains('show') && e.key === 'Escape') {
+        window.closeServiceDetail();
+    }
+});
+
+/* --- 6. GLOBAL IMAGE CLICK-TO-ENLARGE LOGIC --- */
+document.addEventListener('DOMContentLoaded', () => {
+    // Select images in About and Portfolio sections
+    const clickableImages = document.querySelectorAll('.about-image img, .portfolio-image img');
+    clickableImages.forEach(img => {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', () => {
+            window.openModal([img.src], 0);
+        });
+    });
 });
