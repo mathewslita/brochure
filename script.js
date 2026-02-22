@@ -256,9 +256,27 @@ const servicesData = {
     venta: {
         title: "Venta",
         category: "Comercialización",
-        description: `<p>Ofrecemos la venta de materiales eléctricos, garantizando calidad, cumplimiento y eficiencia en cada proceso. Trabajamos con proveedores confiables para ofrecer productos que cumplen con los estándares requeridos, brindando soluciones, seguridad y oportunas para nuestros clientes.</p>`,
+        description: `
+            <p><strong>Venta e Importación de Material Eléctrico, Electromecánico e Instrumentación</strong></p>
+            <p>Ofrecemos un servicio especializado de importación y suministro de materiales, asegurando calidad, cumplimiento y eficiencia en cada entrega. Trabajamos con una red global de proveedores confiables que superan los altos estándares técnicos exigidos por la industria, brindando soluciones seguras, competitivas y oportunas para el éxito de sus proyectos.</p>
+            
+            <h4 style="margin-top: 1.5rem; color: var(--primary-color);">Suministro Global de Materiales</h4>
+            <ul style="margin-top: 0.5rem; padding-left: 1.5rem; list-style: none;">
+                <li style="margin-bottom: 0.8rem;"><i class="fa-solid fa-bolt" style="color: var(--secondary-color); margin-right: 0.5rem;"></i> <strong>Material eléctrico:</strong> Conductores, protecciones, transformadores y equipos de maniobra en media y alta tensión.</li>
+                <li style="margin-bottom: 0.8rem;"><i class="fa-solid fa-gears" style="color: var(--secondary-color); margin-right: 0.5rem;"></i> <strong>Material electromecánico:</strong> Motores, bombas, tableros y repuestos industriales.</li>
+                <li style="margin-bottom: 0.8rem;"><i class="fa-solid fa-gauge" style="color: var(--secondary-color); margin-right: 0.5rem;"></i> <strong>Instrumentación:</strong> Sensores, válvulas de control, tubing y equipos de medición de precisión.</li>
+            </ul>
+
+            <h4 style="margin-top: 1.5rem; color: var(--primary-color);">Nuestras Ventajas en Importación</h4>
+            <ul style="margin-top: 0.5rem; padding-left: 1.5rem; list-style: none;">
+                <li style="margin-bottom: 0.8rem;"><i class="fa-solid fa-shield-check" style="color: var(--secondary-color); margin-right: 0.5rem;"></i> <strong>Calidad certificada:</strong> Solo trabajamos con marcas que cumplen estrictamente las normativas vigentes.</li>
+                <li style="margin-bottom: 0.8rem;"><i class="fa-solid fa-truck-fast" style="color: var(--secondary-color); margin-right: 0.5rem;"></i> <strong>Eficiencia logística:</strong> Tiempos de entrega optimizados para evitar paradas innecesarias en su operación.</li>
+                <li style="margin-bottom: 0.8rem;"><i class="fa-solid fa-user-tie" style="color: var(--secondary-color); margin-right: 0.5rem;"></i> <strong>Asesoría técnica:</strong> No solo vendemos el material; le asesoramos sobre la mejor opción técnica para su necesidad específica.</li>
+            </ul>`,
         images: [
-            { src: "./assets/material_electrico_venta.png", caption: "Materiales y componentes eléctricos premium." }
+            { src: "./assets/material_electrico_venta.png", caption: "Materiales y componentes eléctricos premium." },
+            { src: "./assets/ventas.jpg", caption: "Suministro global de equipos a gran escala." },
+            { src: "./assets/equipo_seguridad_personal.png", caption: "Garantía de calidad y respaldo logístico." }
         ],
         whatsappMessage: "Hola, quiero comprar materiales eléctricos"
     }
