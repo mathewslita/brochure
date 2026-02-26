@@ -1,0 +1,638 @@
+@import "tailwindcss";
+
+/* =========================================
+   1. CONFIGURACIÓN DE TEMA (TAILWIND V4)
+   ========================================= */
+@theme {
+    /* Mapeamos las variables CSS a nombres de Tailwind */
+    --color-primary: var(--primary-color);
+    --color-primary-light: var(--primary-light);
+    --color-secondary: var(--secondary-color);
+    --color-secondary-hover: var(--secondary-hover);
+    --color-accent: var(--accent);
+    --color-neutral: var(--text-dark);
+    --color-dark: var(--text-dark);
+    --color-lightBg: var(--bg-light);
+
+    --animate-pulse-fast: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    --background-image-gradient-warm: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+}
+
+/* =========================================
+   2. VARIABLES NATIVAS & RESETEO
+   ========================================= */
+:root {
+    /* Paleta de Colores Centralizada */
+    --primary-color: #1d4ed8;
+    /* Enterprise Blue */
+    --primary-light: #3b82f6;
+    /* Lighter Blue */
+    --secondary-color: #f59e0b;
+    /* Golden Orange */
+    --secondary-hover: #d97706;
+    /* Darker Orange */
+    --accent: #f59e0b;
+
+    --text-dark: #1e293b;
+    /* Slate 800 */
+    --text-light: #64748b;
+    /* Slate 500 */
+    --bg-light: #f8fafc;
+    /* Background Light */
+    --bg-white: #ffffff;
+
+    /* Sombras Suaves */
+    --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+    /* Transiciones */
+    --transition-fast: 0.2s ease-out;
+    --transition-base: 0.3s ease-out;
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--color-dark);
+    background-color: var(--color-lightBg);
+    line-height: 1.8;
+    overflow-x: hidden;
+    /* Fuente base legible */
+    font-family: system-ui, -apple-system, sans-serif;
+    /* MEJORA: Suavizado de fuente para que se vea más fina/profesional */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Espaciado global para secciones */
+section {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+}
+
+@media (min-width: 768px) {
+    section {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+}
+
+/* Espacio estandarizado debajo de los títulos de sección */
+.section-header {
+    margin-bottom: 2rem !important;
+}
+
+@media (min-width: 768px) {
+    .section-header {
+        margin-bottom: 3rem !important;
+    }
+}
+
+/* MEJORA: Color de selección de texto (Branding) */
+::selection {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* MEJORA: Scrollbar personalizado */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-light);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+/* =========================================
+   3. COMPONENTES REUTILIZABLES (BOTONES)
+   ========================================= */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+    font-weight: 700;
+    padding: 1rem 2.2rem;
+    font-size: 1.1rem;
+    border-radius: 9999px;
+    /* Pill shape */
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    /* Asegura que no tenga subrayado */
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: transparent;
+    color: #fff;
+    font-weight: 600;
+    padding: 1rem 2.2rem;
+    font-size: 1.1rem;
+    border-radius: 9999px;
+    border: 2px solid #fff;
+    transition: all var(--transition-base);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-secondary:hover {
+    background-color: #fff;
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.btn-primary.large,
+.btn-secondary.large {
+    padding: 1.25rem 3.5rem;
+    font-size: 1.25rem;
+}
+
+/* Animación Pulse */
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7);
+    }
+
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(245, 158, 11, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+    }
+}
+
+/* =========================================
+   4. UTILIDADES DE DISEÑO
+   ========================================= */
+.container-main {
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+/* LA SOLUCIÓN QUE FALTABA: 
+   Esta clase define que la sección sea un bloque alto y centrado por defecto. */
+.section-cta-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Usamos clamp para que el área azul sea grande pero no gigante en laptops */
+    padding-top: clamp(5rem, 10vh, 12rem);
+    padding-bottom: clamp(5rem, 10vh, 12rem);
+    width: 100%;
+    text-align: center;
+}
+
+@media (min-width: 1024px) {
+    .container-main {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+
+    .section-cta-layout {
+        padding-top: 10rem;
+        /* El "techo" azul que querías */
+        padding-bottom: 12rem;
+        /* El "suelo" azul extra para los botones */
+    }
+}
+
+/* Reveal Animations */
+.reveal,
+.reveal-up {
+    opacity: 0;
+    will-change: transform, opacity;
+    transition: all 0.8s ease-out;
+}
+
+.reveal {
+    transform: translateY(30px);
+}
+
+.reveal-up {
+    transform: translateY(50px);
+}
+
+.reveal.active,
+.reveal-up.active {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* =========================================
+   5. MODALES (Legacy Support)
+   ========================================= */
+/* Mantengo esto porque tu JS depende de estas clases, 
+   pero he limpiado un poco la sintaxis */
+.modal,
+.service-modal-overlay {
+    display: none;
+    /* JS toggles 'flex' via '.show' class */
+    position: fixed;
+    z-index: 50;
+    /* Z-Index estandarizado */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+    /* Efecto moderno */
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.show,
+.service-modal-overlay.show {
+    display: flex;
+    animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.service-modal-content {
+    background: var(--bg-white);
+    position: relative;
+    max-width: 1000px;
+    width: 90%;
+    max-height: 90vh;
+    border-radius: 16px;
+    overflow-y: auto;
+    box-shadow: var(--shadow-lg);
+    padding: 2.5rem;
+}
+
+/* Restoring Deleted Image Modal Internal Classes */
+.modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#modal-image {
+    max-width: 100%;
+    max-height: 80vh;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+.modal-caption {
+    margin-top: 15px;
+    color: #ccc;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-prev,
+.modal-next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    transition: 0.3s;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-prev {
+    left: -50px;
+    border-radius: 3px 0 0 3px;
+}
+
+.modal-next {
+    right: -50px;
+    border-radius: 0 3px 3px 0;
+}
+
+.modal-prev:hover,
+.modal-next:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+}
+
+/* =========================================
+   BOTÓN DE CERRAR MEJORADO (SOLUCIÓN UI)
+   ========================================= */
+.service-modal-close {
+    position: absolute;
+    top: 1rem;
+    /* 16px desde arriba */
+    right: 1rem;
+    /* 16px desde la derecha */
+
+    /* Z-INDEX CRÍTICO: Esto asegura que esté ENCIMA de la imagen */
+    z-index: 100;
+
+    /* ESTILO VISUAL: Botón blanco circular flotante */
+    background-color: #ffffff;
+    color: var(--text-dark);
+    /* O usa #333 si no te carga la variable */
+
+    width: 44px;
+    /* Tamaño táctil seguro (mínimo recomendado por Apple/Google) */
+    height: 44px;
+    border-radius: 50%;
+    /* Círculo perfecto */
+    border: none;
+
+    /* SOMBRA: Para que se separe visualmente de la foto */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+    /* CENTRADO DEL ICONO (X) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Efecto al pasar el mouse */
+.service-modal-close:hover {
+    background-color: var(--secondary-color);
+    /* Se vuelve naranja (o tu color secundario) */
+    color: #ffffff;
+    transform: scale(1.1) rotate(90deg);
+    /* Pequeña animación chula */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.service-modal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+/* Left side gallery */
+.service-main-image-container {
+    width: 100%;
+    height: 400px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    background: #ffffff;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.service-main-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Ajuste para evitar deformaciones */
+}
+
+.service-image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    min-height: 48px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    color: #fff;
+    padding: 2rem 1rem 0.8rem 1rem;
+    font-size: 0.95rem;
+    text-align: center;
+    backdrop-filter: blur(2px);
+    margin: 0;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.service-image-caption.show {
+    transform: translateY(0);
+}
+
+.service-thumb-container {
+    display: flex;
+    gap: 0.8rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+}
+
+.service-thumb-container::-webkit-scrollbar {
+    height: 6px;
+}
+
+.service-thumb-container::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 10px;
+}
+
+.sm-thumb {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all var(--transition-fast);
+    opacity: 0.6;
+}
+
+.sm-thumb.active,
+.sm-thumb:hover {
+    opacity: 1;
+    border-color: var(--secondary-color);
+}
+
+/* Right side info */
+.service-modal-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.service-modal-category {
+    display: inline-block;
+    background-color: #f1f5f9;
+    color: var(--text-light);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    align-self: flex-start;
+}
+
+.service-modal-title {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.service-modal-description {
+    color: var(--text-dark);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+
+.service-modal-description ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.service-modal-description li {
+    position: relative;
+    padding-left: 1.8rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-dark);
+}
+
+.service-modal-description li::before {
+    content: '\f00c';
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+    font-size: 1.1rem;
+}
+
+.service-modal-pricing {
+    border-top: 1px solid #e2e8f0;
+    padding-top: 1.5rem;
+    margin-top: auto;
+}
+
+.pricing-note {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* =========================================
+   6. TIPOGRAFÍA FLUIDA (CORREGIDA)
+   ========================================= */
+/* IMPORTANTE: Eliminé los selectores globales p {} y h1 {} 
+   porque rompían la especificidad de Tailwind.
+   Usa estas clases si quieres texto fluido, o deja que Tailwind maneje el resto.
+*/
+
+.text-fluid-h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+}
+
+.text-fluid-p {
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+}
+
+/* Ajustes Responsive Globales */
+@media (max-width: 768px) {
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 0.75rem;
+    }
+
+    .service-modal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-modal-content {
+        padding: 1.5rem;
+        max-height: 95vh;
+        width: 95%;
+    }
+
+    .service-main-image-container {
+        height: 250px;
+    }
+}
+
+@media (max-width: 900px) {
+    .modal-prev {
+        left: 10px;
+    }
+
+    .modal-next {
+        right: 10px;
+    }
+}
