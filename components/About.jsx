@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { FaBullseye, FaCircleCheck, FaUsersGear, FaHelmetSafety, FaOilWell, FaIndustry } from 'react-icons/fa6';
 
 export default function About({ openImageModal }) {
     return (
@@ -25,7 +26,7 @@ export default function About({ openImageModal }) {
                         <div className="flex-1 lg:pl-8 xl:pl-12">
                             <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-8 flex items-center gap-5">
                                 <div className="bg-white/95 backdrop-blur-md w-16 h-16 md:w-20 md:h-20 rounded-2xl border border-neutral/10 shadow-xl flex items-center justify-center shrink-0">
-                                    <i className="fa-solid fa-bullseye text-primary text-3xl md:text-4xl"></i>
+                                    <FaBullseye className="text-primary text-3xl md:text-4xl" />
                                 </div>
                                 Visión
                             </h3>
@@ -44,26 +45,26 @@ export default function About({ openImageModal }) {
                         <div className="flex-1 lg:pr-8 xl:pr-12">
                             <h3 className="text-3xl md:text-4xl font-bold text-primary mb-8 flex items-center gap-5">
                                 <div className="bg-white/95 backdrop-blur-md w-14 h-14 md:w-16 md:h-16 rounded-2xl border border-neutral/10 shadow-xl flex items-center justify-center shrink-0">
-                                    <i className="fa-solid fa-bullseye text-primary text-2xl md:text-3xl"></i>
+                                    <FaBullseye className="text-primary text-2xl md:text-3xl" />
                                 </div>
                                 Misión
                             </h3>
                             <ul className="space-y-6 md:space-y-8 text-gray-600 text-base md:text-lg lg:text-xl leading-relaxed">
                                 <li className="flex items-start gap-4 md:gap-5 text-left">
                                     <div className="mt-1 min-w-[28px] flex justify-center">
-                                        <i className="fa-solid fa-circle-check text-secondary text-2xl"></i>
+                                        <FaCircleCheck className="text-secondary text-2xl" />
                                     </div>
                                     <span>Proveer soluciones integrales de ingeniería, montaje electromecánico, instrumentación y pruebas con los más altos estándares.</span>
                                 </li>
                                 <li className="flex items-start gap-5 text-left">
                                     <div className="mt-1 min-w-[28px] flex justify-center">
-                                        <i className="fa-solid fa-circle-check text-secondary text-2xl"></i>
+                                        <FaCircleCheck className="text-secondary text-2xl" />
                                     </div>
                                     <span>Ejecutar cada proyecto integrando equipos de vanguardia tecnológica y personal altamente capacitado.</span>
                                 </li>
                                 <li className="flex items-start gap-5 text-left">
                                     <div className="mt-1 min-w-[28px] flex justify-center">
-                                        <i className="fa-solid fa-circle-check text-secondary text-2xl"></i>
+                                        <FaCircleCheck className="text-secondary text-2xl" />
                                     </div>
                                     <span>Optimizar los procesos del sector industrial y energético operando como un verdadero aliado estratégico para sus metas.</span>
                                 </li>
@@ -80,7 +81,7 @@ export default function About({ openImageModal }) {
                         <div className="flex-1 lg:pl-8 xl:pl-12">
                             <h3 className="text-3xl md:text-4xl font-bold text-primary mb-8 flex items-center gap-5">
                                 <div className="bg-white/95 backdrop-blur-md w-14 h-14 md:w-16 md:h-16 rounded-2xl border border-neutral/10 shadow-xl flex items-center justify-center shrink-0">
-                                    <i className="fa-solid fa-users-gear text-primary text-2xl md:text-3xl"></i>
+                                    <FaUsersGear className="text-primary text-2xl md:text-3xl" />
                                 </div>
                                 A quién atendemos
                             </h3>
@@ -90,7 +91,7 @@ export default function About({ openImageModal }) {
                             <ul className="space-y-8 md:space-y-10">
                                 <li className="flex items-start gap-5 md:gap-6 border-l-4 border-transparent hover:border-secondary pl-4 transition-colors">
                                     <div className="bg-primary/5 w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center shrink-0">
-                                        <i className="fa-solid fa-helmet-safety text-secondary text-xl md:text-2xl"></i>
+                                        <FaHelmetSafety className="text-secondary text-xl md:text-2xl" />
                                     </div>
                                     <div>
                                         <strong className="text-dark text-lg md:text-xl block mb-2">Sector Minero</strong>
@@ -99,7 +100,7 @@ export default function About({ openImageModal }) {
                                 </li>
                                 <li className="flex items-start gap-5 md:gap-6 border-l-4 border-transparent hover:border-secondary pl-4 transition-colors">
                                     <div className="bg-primary/5 w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center shrink-0">
-                                        <i className="fa-solid fa-oil-well text-secondary text-xl md:text-2xl"></i>
+                                        <FaOilWell className="text-secondary text-xl md:text-2xl" />
                                     </div>
                                     <div>
                                         <strong className="text-dark text-lg md:text-xl block mb-2">Sector Petrolero</strong>
@@ -108,7 +109,7 @@ export default function About({ openImageModal }) {
                                 </li>
                                 <li className="flex items-start gap-5 md:gap-6 border-l-4 border-transparent hover:border-secondary pl-4 transition-colors">
                                     <div className="bg-primary/5 w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center shrink-0">
-                                        <i className="fa-solid fa-industry text-secondary text-xl md:text-2xl"></i>
+                                        <FaIndustry className="text-secondary text-xl md:text-2xl" />
                                     </div>
                                     <div>
                                         <strong className="text-dark text-lg md:text-xl block mb-2">Sector Industrial</strong>

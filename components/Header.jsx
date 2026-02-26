@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { FaWhatsapp, FaBars, FaXmark } from 'react-icons/fa6';
 
 // Configuración de los enlaces (Edita esto para cambiar el menú)
 const MENU_ITEMS = [
@@ -77,7 +78,7 @@ export default function Header() {
                         rel="noreferrer"
                         className="btn-primary ml-2 !px-7 !py-2.5 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all"
                     >
-                        Contacto <i className="fa-brands fa-whatsapp text-xl"></i>
+                        Contacto <FaWhatsapp className="text-xl" />
                     </a>
                 </nav>
 
@@ -87,7 +88,7 @@ export default function Header() {
                     onClick={() => setMobileMenuActive(true)}
                     aria-label="Abrir menú"
                 >
-                    <i className="fa-solid fa-bars"></i>
+                    <FaBars />
                 </button>
             </div>
 
@@ -102,7 +103,7 @@ export default function Header() {
                     onClick={() => setMobileMenuActive(false)}
                     aria-label="Cerrar menú"
                 >
-                    <i className="fa-solid fa-xmark"></i>
+                    <FaXmark />
                 </button>
 
                 {/* Enlaces Móvil */}
@@ -125,7 +126,7 @@ export default function Header() {
                         className="btn-primary w-full justify-center mt-6 shadow-lg shadow-secondary/20 hover:-translate-y-1"
                         onClick={() => setMobileMenuActive(false)}
                     >
-                        Contacto <i className="fa-brands fa-whatsapp text-2xl"></i>
+                        Contacto <FaWhatsapp className="text-2xl" />
                     </a>
                 </nav>
             </div>

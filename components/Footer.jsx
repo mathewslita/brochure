@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { FaEnvelope, FaLocationDot } from 'react-icons/fa6';
 
 export default function Footer() {
     return (
@@ -49,7 +50,7 @@ export default function Footer() {
                         {/* Email */}
                         <div className="flex flex-col md:flex-row items-center md:items-start gap-4 group">
                             <div className="bg-white/10 backdrop-blur-md !p-4 rounded-xl border border-white/5 group-hover:bg-primary transition-colors duration-300">
-                                <i className="fa-solid fa-envelope text-secondary group-hover:text-white text-xl"></i>
+                                <FaEnvelope className="text-secondary group-hover:text-white text-xl" />
                             </div>
                             <div className="text-base text-gray-300 mt-1">
                                 <p className="mb-2 hover:text-white cursor-pointer hover:underline">marcotimbila1690@gmail.com</p>
@@ -59,7 +60,7 @@ export default function Footer() {
                         {/* Ubicación */}
                         <div className="flex flex-col md:flex-row items-center md:items-start gap-4 group">
                             <div className="bg-white/10 backdrop-blur-md !p-4 rounded-xl border border-white/5 group-hover:bg-primary transition-colors duration-300">
-                                <i className="fa-solid fa-location-dot text-secondary group-hover:text-white text-xl"></i>
+                                <FaLocationDot className="text-secondary group-hover:text-white text-xl" />
                             </div>
                             <div className="text-base text-gray-300 mt-1">
                                 <p className="mb-3"><strong className="text-primary-light block mb-1">Quito:</strong> Av. Carapungo y Tupac Yupanqui.</p>

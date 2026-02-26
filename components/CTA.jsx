@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaWhatsapp } from 'react-icons/fa6';
 
 export default function CTA() {
     return (
@@ -34,12 +35,12 @@ export default function CTA() {
                 <div className="flex flex-col sm:flex-row justify-center items-center gap-8 w-full">
                     <a href="https://wa.me/593988012730" target="_blank" rel="noreferrer"
                         className="btn-primary !px-12 !py-4 shadow-xl hover:scale-105 transition-all font-bold">
-                        <i className="fa-brands fa-whatsapp text-2xl"></i> Hablar con Asesor
+                        <FaWhatsapp className="text-2xl" /> Hablar con Asesor
                     </a>
 
                     <a href="https://wa.me/593987024974" target="_blank" rel="noreferrer"
                         className="btn-secondary !px-12 !py-4 border-2 hover:bg-white/10 transition-all font-bold">
-                        <i className="fa-brands fa-whatsapp text-2xl"></i> Soporte
+                        <FaWhatsapp className="text-2xl" /> Soporte
                     </a>
                 </div>
             </div>

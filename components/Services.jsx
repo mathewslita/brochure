@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { FaArrowRight } from 'react-icons/fa6';
 
 // ==========================================
 // 1. DATOS DE LOS SERVICIOS (Configuración)
@@ -106,7 +107,7 @@ export default function Services({ openServiceModal }) {
                                             className="btn-primary large shadow-lg hover:shadow-xl hover:-translate-y-1"
                                             onClick={() => openServiceModal(service.id)}
                                         >
-                                            Leer más <i className="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                                            Leer más <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
                                         </button>
                                     </div>
                                 </div>

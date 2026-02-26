@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { FaXmark, FaArrowRight, FaWhatsapp } from 'react-icons/fa6';
 
 export default function ServiceModal({ currentService, serviceModalOpen, closeServiceModal, smMainImgIndex, setSmMainImgIndex }) {
     if (!currentService) return null;
@@ -7,7 +8,7 @@ export default function ServiceModal({ currentService, serviceModalOpen, closeSe
     return (
         <div id="service-detail-modal" className={`service-modal-overlay ${serviceModalOpen ? 'show' : ''}`} onClick={(e) => { if (e.target.id === 'service-detail-modal') closeServiceModal(); }}>
             <div className="service-modal-content">
-                <button className="service-modal-close" onClick={closeServiceModal}><i className="fa-solid fa-xmark"></i></button>
+                <button className="service-modal-close" onClick={closeServiceModal}><FaXmark /></button>
                 <div className="service-modal-grid">
                     <div className="service-modal-gallery">
                         <div
@@ -19,7 +20,7 @@ export default function ServiceModal({ currentService, serviceModalOpen, closeSe
                         >
                             <Image src={currentService.images[smMainImgIndex].src} alt={currentService.title} fill style={{ objectFit: 'contain', backgroundColor: '#f1f5f9' }} />
                             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/10 z-10">
-                                <span className="bg-white/90 text-primary font-bold px-4 py-2 rounded-full shadow border border-slate-200 flex items-center gap-2 text-sm whitespace-nowrap"><i className="fa-solid fa-arrow-right"></i></span>
+                                <span className="bg-white/90 text-primary font-bold px-4 py-2 rounded-full shadow border border-slate-200 flex items-center gap-2 text-sm whitespace-nowrap"><FaArrowRight /></span>
                             </div>
                         </div>
                         <p className="text-center italic text-slate-500 text-[0.95rem] mb-4 font-medium px-2">{currentService.images[smMainImgIndex].caption}</p>
@@ -38,7 +39,7 @@ export default function ServiceModal({ currentService, serviceModalOpen, closeSe
                         <div className="service-modal-pricing">
                             <p className="pricing-note">Servicios y equipos bajo cotización formal.</p>
                             <a href={`https://wa.me/593988012730?text=${encodeURIComponent(currentService.whatsappMessage)}`} target="_blank" rel="noreferrer" className="btn-primary large pulse w-100" style={{ justifyContent: 'center', width: '100%' }}>
-                                Cotizar por WhatsApp <i className="fa-brands fa-whatsapp"></i>
+                                Cotizar por WhatsApp <FaWhatsapp />
                             </a>
                         </div>
                     </div>

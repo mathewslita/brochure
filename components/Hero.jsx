@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { FaArrowDown } from 'react-icons/fa6';
 
 export default function Hero() {
     return (
@@ -28,7 +29,7 @@ export default function Hero() {
                 </p>
                 <div className="w-full flex justify-center">
                     <Link href="#servicios" className="btn-primary large pulse shadow-2xl hover:-translate-y-1 transition-transform w-[90%] sm:w-auto flex justify-center">
-                        Explorar Servicios <i className="fa-solid fa-arrow-down ml-3"></i>
+                        Explorar Servicios <FaArrowDown className="ml-3" />
                     </Link>
                 </div>
             </div>
