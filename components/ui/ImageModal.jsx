@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import Image from 'next/image';
 
 export default function ImageModal({ modalOpen, closeImageModal, modalImages, modalIndex, prevImage, nextImage }) {
     // Keyboard navigation for image modal
@@ -18,7 +19,9 @@ export default function ImageModal({ modalOpen, closeImageModal, modalImages, mo
             <span className="modal-close" onClick={closeImageModal}>&times;</span>
             <div className="modal-content" style={{ position: 'relative', maxWidth: '90vw', maxHeight: '90vh' }}>
                 {modalImages.length > 0 && (
-                    <img id="modal-image" src={modalImages[modalIndex]} alt="Enlarged Image" style={{ display: 'block', margin: 'auto', maxWidth: '100%', maxHeight: '80vh' }} />
+                    <div style={{ position: 'relative', width: '90vw', height: '80vh', maxWidth: '1000px' }}>
+                        <Image id="modal-image" src={modalImages[modalIndex]} alt="Enlarged Image" fill style={{ objectFit: 'contain', margin: 'auto' }} />
+                    </div>
                 )}
                 {modalImages.length > 1 && (
                     <>

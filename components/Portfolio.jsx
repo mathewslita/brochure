@@ -21,7 +21,7 @@ export default function Portfolio({ openImageModal }) {
                             <Image src="/assets/proyectocablesempalme.jpg" alt="Sistemas de Potencia" fill style={{ objectFit: 'cover' }} className="group-hover:scale-110 transition-transform duration-700" />
                         </div>
                         <div className="p-8 md:px-10 md:pt-8 md:pb-10 flex flex-col flex-grow bg-white relative z-20 items-center !text-center">
-                            <h4 className="w-full !text-center text-xl md:text-[22px] font-bold text-primary !mb-4 leading-tight">Sistemas de Potencia 15kV y Certificación</h4>
+                            <h3 className="w-full !text-center text-xl md:text-[22px] font-bold text-primary !mb-4 leading-tight">Sistemas de Potencia 15kV y Certificación</h3>
                             <div className="inline-block bg-secondary/30 text-accent font-bold text-xs uppercase tracking-wider px-4 py-2 rounded-full !mb-6 mt-auto self-center">
                                 PROYECTO PUCUNA D / PROCOPET
                             </div>
@@ -38,7 +38,7 @@ export default function Portfolio({ openImageModal }) {
                             <Image src="/assets/Equipo Megger probando cables.jpeg" alt="Empalmes Controlados" fill style={{ objectFit: 'cover' }} className="group-hover:scale-110 transition-transform duration-700" />
                         </div>
                         <div className="p-8 md:px-10 md:pt-8 md:pb-10 flex flex-col flex-grow bg-white relative z-20 items-center !text-center">
-                            <h4 className="w-full !text-center text-xl md:text-[22px] font-bold text-primary !mb-4 leading-tight">Empalmes Controlados y Diagnóstico Avanzado</h4>
+                            <h3 className="w-full !text-center text-xl md:text-[22px] font-bold text-primary !mb-4 leading-tight">Empalmes Controlados y Diagnóstico Avanzado</h3>
                             <div className="inline-block bg-secondary/30 text-accent font-bold text-xs uppercase tracking-wider px-4 py-2 rounded-full !mb-6 mt-auto self-center">
                                 MONTAJE Y PRUEBAS / CONDUTO
                             </div>
@@ -55,7 +55,7 @@ export default function Portfolio({ openImageModal }) {
                             <Image src="/assets/Cableadointernodetableroconborneras.jpeg" alt="Integración de Tableros" fill style={{ objectFit: 'cover' }} className="group-hover:scale-110 transition-transform duration-700" />
                         </div>
                         <div className="p-8 md:px-10 md:pt-8 md:pb-10 flex flex-col flex-grow bg-white relative z-20 items-center !text-center">
-                            <h4 className="w-full !text-center text-xl md:text-[22px] font-bold text-primary !mb-4 leading-tight">Integración de Tableros de Control</h4>
+                            <h3 className="w-full !text-center text-xl md:text-[22px] font-bold text-primary !mb-4 leading-tight">Integración de Tableros de Control</h3>
                             <div className="inline-block bg-secondary/30 text-accent font-bold text-xs uppercase tracking-wider px-4 py-2 rounded-full !mb-6 mt-auto self-center">
                                 AUTOMATIZACIÓN Y CONTROL
                             </div>

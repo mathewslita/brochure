@@ -9,7 +9,7 @@ export default function TrustBanner() {
                         <i className="fa-solid fa-briefcase text-3xl md:text-4xl text-secondary drop-shadow-md"></i>
                     </div>
                     <div className="flex flex-col text-center md:text-left items-center md:items-start flex-1">
-                        <h4 className="text-2xl md:text-3xl font-bold text-white leading-tight mb-0.5">+30</h4>
+                        <p className="text-2xl md:text-3xl font-bold text-white leading-tight mb-0.5">+30</p>
                         <p className="text-blue-100 text-sm md:text-base font-medium tracking-wide">Proyectos Realizados</p>
                     </div>
                 </div>
@@ -23,7 +23,7 @@ export default function TrustBanner() {
                         <i className="fa-solid fa-calendar-check text-3xl md:text-4xl text-secondary drop-shadow-md"></i>
                     </div>
                     <div className="flex flex-col text-center md:text-left items-center md:items-start flex-1">
-                        <h4 className="text-2xl md:text-3xl font-bold text-white leading-tight mb-0.5">+3 Años</h4>
+                        <p className="text-2xl md:text-3xl font-bold text-white leading-tight mb-0.5">+3 Años</p>
                         <p className="text-blue-100 text-sm md:text-base font-medium tracking-wide">De Experiencia</p>
                     </div>
                 </div>
@@ -37,7 +37,7 @@ export default function TrustBanner() {
                         <i className="fa-solid fa-shield-halved text-3xl md:text-4xl text-secondary drop-shadow-md"></i>
                     </div>
                     <div className="flex flex-col text-center md:text-left items-center md:items-start flex-1">
-                        <h4 className="text-2xl md:text-3xl font-bold text-white leading-tight mb-0.5">Garantía</h4>
+                        <p className="text-2xl md:text-3xl font-bold text-white leading-tight mb-0.5">Garantía</p>
                         <p className="text-blue-100 text-sm md:text-base font-medium tracking-wide">Calidad y Seguridad</p>
                     </div>
                 </div>

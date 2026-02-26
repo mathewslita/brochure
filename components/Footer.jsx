@@ -34,7 +34,7 @@ export default function Footer() {
 
                 {/* --- COLUMNA 2: ENLACES --- */}
                 <div className="footer-links flex flex-col items-center md:items-start gap-4">
-                    <h4 className="text-white text-xl md:text-2xl font-bold mb-6">Enlaces Rápidos</h4>
+                    <h3 className="text-white text-xl md:text-2xl font-bold mb-6">Enlaces Rápidos</h3>
                     <Link href="#inicio" className="text-gray-400 hover:text-secondary transition-colors text-base md:text-lg py-1 block">Inicio</Link>
                     <Link href="#servicios" className="text-gray-400 hover:text-secondary transition-colors text-base md:text-lg py-1 block">Servicios Especializados</Link>
                     <Link href="#proyectos" className="text-gray-400 hover:text-secondary transition-colors text-base md:text-lg py-1 block">Proyectos Principales</Link>
@@ -43,7 +43,7 @@ export default function Footer() {
 
                 {/* --- COLUMNA 3: CONTACTO --- */}
                 <div className="footer-contact flex flex-col items-center md:items-start gap-8 text-center md:text-left">
-                    <h4 className="text-white text-xl md:text-2xl font-bold mb-4">Contacto Directo</h4>
+                    <h3 className="text-white text-xl md:text-2xl font-bold mb-4">Contacto Directo</h3>
                     <div className="flex flex-col items-center md:items-start gap-8 w-full">
                         {/* Email */}
                         <div className="flex flex-col md:flex-row items-center md:items-start gap-4 group">
