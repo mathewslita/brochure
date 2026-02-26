@@ -28,3 +28,8 @@ Thumbs.db
 test.ps1
 target.css
 target.html
+
+# Next.js build output
+.next
+out
+build
