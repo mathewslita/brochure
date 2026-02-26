@@ -43,15 +43,14 @@ export default function Header() {
 
                 {/* --- 1. LOGO (Con Link al inicio) --- */}
                 <Link href="/" className="flex items-center gap-3 group">
-                    <div className="relative w-[50px] h-[50px] md:w-[60px] md:h-[60px]">
-                        <Image
-                            src="/assets/logocircuit.png"
-                            alt="Circuit Store Logo"
-                            fill
-                            className="object-contain transition-transform group-hover:scale-105"
-                            priority
-                        />
-                    </div>
+                    <Image
+                        src="/assets/logocircuit.png"
+                        alt="Circuit Store Logo"
+                        width={60}
+                        height={60}
+                        className="object-contain transition-transform group-hover:scale-105 w-[50px] h-[50px] md:w-[60px] md:h-[60px]"
+                        priority
+                    />
                     {/* Texto del Logo Estilizado */}
                     <div className="flex flex-col leading-none">
                         <span className="text-primary font-extrabold text-xl md:text-2xl tracking-wide">CIRCUIT</span>

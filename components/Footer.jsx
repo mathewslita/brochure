@@ -18,11 +18,12 @@ export default function Footer() {
 
                 {/* --- COLUMNA 1: MARCA --- */}
                 <div className="footer-brand flex flex-col items-center md:items-start text-center md:text-left">
-                    <div className="logo mb-8 relative w-[240px] h-[70px]">
+                    <div className="logo mb-8">
                         <Image
                             src="/assets/logocircuit.png"
                             alt="Circuit Store Logo"
-                            fill
+                            width={240}
+                            height={70}
                             priority
                             style={{ objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
                         />

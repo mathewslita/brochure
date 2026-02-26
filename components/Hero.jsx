@@ -10,6 +10,7 @@ export default function Hero() {
                     src="/assets/Tuberías industriales con mechero al fondo.jpeg"
                     alt="Fondo de Tuberías Industriales"
                     fill
+                    sizes="100vw"
                     priority
                     quality={90}
                     style={{ objectFit: 'cover', objectPosition: 'center' }}
