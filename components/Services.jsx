@@ -18,7 +18,7 @@ const servicesData = [
         id: 'instrumentacion',
         title: 'Área de Instrumentación',
         description: 'Montaje de sistemas de inyección de químicos, tubing y sistemas neumáticos o hidráulicos.',
-        image: '/assets/Paneldeaceroconmanómetrosypalancasrojas.jpeg',
+        image: '/assets/calentadorestrifacicos.jpeg',
     },
     {
         id: 'medicion',
