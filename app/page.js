@@ -10,8 +10,10 @@ import Portfolio from '../components/Portfolio';
 import Clients from '../components/Clients';
 import CTA from '../components/CTA';
 import Footer from '../components/Footer';
-import ImageModal from '../components/ui/ImageModal';
-import ServiceModal from '../components/ui/ServiceModal';
+import dynamic from 'next/dynamic';
+
+const ImageModal = dynamic(() => import('../components/ui/ImageModal'), { ssr: false });
+const ServiceModal = dynamic(() => import('../components/ui/ServiceModal'), { ssr: false });
 
 // IMPORTAMOS LOS DATOS (El Array que acabamos de crear)
 import { servicesData } from '../data/services';
